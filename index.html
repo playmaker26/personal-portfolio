@@ -4,174 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="font-6/css/all.css" />
     <link rel="shortcut icon" href="favicon/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="font-6/css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&display=swap"
       rel="stylesheet"
     />
-    <title>Personal portfolio</title>
+    <script defer src="js/script.js"></script>
+    <title>Personal Portfolio</title>
   </head>
   <body>
+    <!--header section-->
     <header class="main-header">
       <a href="index.html">Jorge Artaza</a>
-      <ul class="main-ul">
-        <li>
-          <a href="https://www.facebook.com/" target="_blank"
-            ><i class="fa-brands fa-square-facebook facebook"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://github.com/" target="_blank" target="_blank"
-            ><i class="fa-brands fa-github github"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://x.com/" target="_blank"
-            ><i class="fa-brands fa-square-twitter twitter"></i
-          ></a>
-        </li>
-      </ul>
+      <nav>
+        <button class="burger">
+          <span class="bar"></span>
+        </button>
+        <ul class="main-ul">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
+    <!--main section-->
     <main>
       <section id="home">
         <figure>
-          <img src="images/hero.gif" alt="people working" />
+          <img src="img/home.gif" alt="" />
         </figure>
         <article>
           <header>
-            <h1>Hi, i'm <span>Jorge</span></h1>
+            <h1>Hi, i'm <span>Jorge.</span></h1>
           </header>
-
-          <p>I am a Full stack developer.</p>
-          <header>
-            <nav>
-              <ul>
-                <li>
-                  <a href="#home"
-                    ><i class="fa-solid fa-house"></i> <span>Home</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#about"
-                    ><i class="fa-solid fa-address-card"></i>
-                    <span>About</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#skill"
-                    ><i class="fa-solid fa-toolbox"></i> <span>Skills</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#contact"
-                    ><i class="fa-sharp fa-solid fa-phone-flip"></i>
-                    <span>Contact</span></a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </header>
+          <p>I am a <span>designer</span> and <span>developer</span></p>
+          <a href="#project">View my Projects</a>
         </article>
       </section>
       <section id="about">
         <header>
           <h2>About Me</h2>
+          <i class="fa-solid fa-user header-icon"></i>
         </header>
         <figure>
-          <img src="images/about.gif" alt="man working on the computer" />
+          <img src="img/avatar.png" alt="" />
           <figcaption>
+            <header>
+              <h3>Hi, I'm <span>Jorge!</span></h3>
+            </header>
             <p>
-              Hi! I’m Jorge, a passionate self-taught programmer with a knack
-              for turning ideas into functional, engaging digital experiences.
-              My journey into programming began with curiosity and a desire to
-              create, and over time, I’ve honed my skills in both frontend and
-              backend development. Through dedication and continuous learning,
-              I’ve mastered various technologies, built real-world projects, and
-              developed a deep understanding of problem-solving and design
-              principles. When I’m not coding, I enjoy exploring new tools and
-              frameworks to keep up with the ever-evolving tech landscape. I
-              believe in lifelong learning and am excited to apply my skills to
-              meaningful projects that make an impact.
+              I'm a passionate self-taught developer and an avid gamer who loves
+              blending creativity and technology. My journey into coding began
+              with curiosity and determination, leading me to build projects
+              that reflect my personality and skills. As a gamer, I bring a
+              strategic and problem-solving mindset to my work, always aiming
+              for innovation and excellence. When I'm not coding or gaming, you
+              can find me exploring new challenges, learning, and leveling up my
+              skills. Welcome to my portfolio—where professionalism meets a
+              touch of gaming flair!
             </p>
-            <a href="#contact">Contact Me</a>
+            <a href="#conact">contact Me</a>
           </figcaption>
         </figure>
       </section>
-      <section id="skill">
-        <header><h2>My Skills</h2></header>
-        <header class="skill-header">
-          <ul>
-            <li><i class="fa-brands fa-html5 html"></i> <span>HTML</span></li>
-            <li><i class="fa-brands fa-css3-alt css"></i> <span>CSS</span></li>
-            <li>
-              <i class="fa-brands fa-square-js js"></i> <span>JavaScript</span>
-            </li>
-            <li><i class="fa-brands fa-node node"></i> <span>node.js</span></li>
-            <li><i class="fa-brands fa-php php"></i> <span>PHP</span></li>
-          </ul>
-        </header>
-      </section>
-
-      <section id="contact">
-        <header>
-          <h2>Contact Me</h2>
-        </header>
-        <div>
-          <header class="contact-info">
-            <ul>
-              <li><i class="fa-brands fa-linkedin linkedin"></i></li>
-              <li>
-                <i class="fa-brands fa-stack-overflow stack-overflow"></i>
-              </li>
-              <li><i class="fa-brands fa-dev dev"></i></li>
-            </ul>
-            <address>
-              <p>E-mail:</p>
-              <a href="#">developer22@gmail.com</a>
-            </address>
-          </header>
-          <form>
-            <div>
-              <label for="name">Name</label>
-              <input type="text" id="name" />
-            </div>
-            <div>
-              <label for="email">E-mail</label>
-              <input type="text" id="email" />
-            </div>
-
-            <div>
-              <label for="message">message</label>
-              <textarea id="message"></textarea>
-            </div>
-            <button type="submit">Send message</button>
-          </form>
-        </div>
-      </section>
-      <footer>
-        <header>
-          <nav>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skill">Skills</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-
-        <header>
-          <ul>
-            <li><i class="fa-brands fa-square-facebook facebook"></i></li>
-            <li><i class="fa-brands fa-github github"></i></li>
-            <li><i class="fa-brands fa-square-twitter twitter"></i></li>
-          </ul>
-        </header>
-      </footer>
+      <section id="skill"></section>
+      <section id="project"></section>
+      <section id="contact"></section>
     </main>
   </body>
 </html>
