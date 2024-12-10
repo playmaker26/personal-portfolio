@@ -242,6 +242,20 @@ section {
   }
 }
 
+main #about figure {
+  opacity: 0;
+  transition: all ease-in 0.8s;
+}
+
+main #about figure.active {
+  opacity: 1;
+}
+
+.header-icon {
+  font-size: 20px;
+  color: #5e080b;
+}
+
 @media only screen and (max-width: 767px) {
   .main-header nav button {
     position: relative;
@@ -311,6 +325,66 @@ section {
     gap: 10px;
   }
 
+  main #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  main #about header,
+  main #about figure figcaption header {
+    align-self: flex-start;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  main #about header h2 {
+    font-size: 28px;
+    color: #ec1c24;
+    font-family: Orbitron;
+    font-weight: bold;
+  }
+
+  main #about figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #about figure img {
+    border-radius: 50%;
+    width: 134px;
+    border: 1px solid #ec1c24;
+  }
+
+  main #about figure figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main #about figure figcaption header h3 {
+    font-size: 24px;
+    font-weight: normal;
+    font-family: "open sans";
+    color: #5e080b;
+  }
+
+  main #about figure figcaption p {
+    font-size: 12px;
+    line-height: 22px;
+    color: #5e080b;
+    font-family: "open sans";
+  }
+
+  main #about figure figcaption a {
+    width: 112px;
+  }
+
   main #home figure,
   main #home figure img {
     width: 100%;
@@ -341,7 +415,8 @@ section {
     font-weight: normal;
   }
 
-  main #home article header h1 span {
+  main #home article header h1 span,
+  main #about figure figcaption header h3 span {
     color: #ec1c24;
     font-weight: bold;
     font-family: Orbitron;
@@ -358,7 +433,8 @@ section {
     color: #ec1c24;
   }
 
-  main #home article a {
+  main #home article a,
+  main #about figure figcaption a {
     background-color: #ec1c24;
     padding: 10px;
     border-radius: 5px;
@@ -443,6 +519,66 @@ section {
     gap: 10px;
   }
 
+  main #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  main #about header,
+  main #about figure figcaption header {
+    align-self: flex-start;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  main #about header h2 {
+    font-size: 32px;
+    color: #ec1c24;
+    font-family: Orbitron;
+    font-weight: bold;
+  }
+
+  main #about figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #about figure img {
+    border-radius: 50%;
+    width: 200px;
+    border: 1px solid #ec1c24;
+  }
+
+  main #about figure figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  main #about figure figcaption header h3 {
+    font-size: 28px;
+    font-weight: normal;
+    font-family: "open sans";
+    color: #5e080b;
+  }
+
+  main #about figure figcaption p {
+    font-size: 14px;
+    line-height: 26px;
+    color: #5e080b;
+    font-family: "open sans";
+  }
+
+  main #about figure figcaption a {
+    width: 112px;
+  }
+
   main #home figure,
   main #home figure img {
     width: 384px;
@@ -473,7 +609,8 @@ section {
     font-weight: normal;
   }
 
-  main #home article header h1 span {
+  main #home article header h1 span,
+  main #about figure figcaption header h3 span {
     color: #ec1c24;
     font-weight: bold;
     font-family: Orbitron;
@@ -490,7 +627,8 @@ section {
     color: #ec1c24;
   }
 
-  main #home article a {
+  main #home article a,
+  main #about figure figcaption a {
     background-color: #ec1c24;
     padding: 10px;
     border-radius: 5px;
@@ -553,6 +691,10 @@ section {
     font-size: 40px;
   }
 
+  main #about header h2 {
+    font-size: 36px;
+  }
+
   main #home article p {
     font-size: 14px;
   }
@@ -562,7 +704,8 @@ section {
     font-weight: bold;
   }
 
-  main #home article a:hover {
+  main #home article a:hover,
+  main #about figure figcaption a:hover {
     color: #5e080b;
     font-weight: bold;
     background-color: #f8aaad;
