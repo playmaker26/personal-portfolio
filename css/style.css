@@ -242,17 +242,56 @@ section {
   }
 }
 
-main #about figure {
+main #about figure,
+main #skill .skill-wrapper figure,
+main #skill .skill-wrapper .skill-list article {
   opacity: 0;
   transition: all ease-in 0.8s;
 }
 
-main #about figure.active {
+main #about figure.active,
+main #skill .skill-wrapper figure.active,
+main #skill .skill-wrapper .skill-list article.active {
   opacity: 1;
 }
 
-.header-icon {
+i {
   font-size: 20px;
+}
+
+.html {
+  color: #e34c26;
+}
+
+.css {
+  color: #264de4;
+}
+
+.js {
+  color: #f0db4f;
+}
+
+.php {
+  color: #474a8a;
+}
+
+.node {
+  color: #68a063;
+}
+
+.figma {
+  color: #0acf83;
+}
+
+.github {
+  color: #211f1f;
+}
+
+.youtube {
+  color: red;
+}
+
+.header-icon {
   color: #5e080b;
 }
 
@@ -325,22 +364,74 @@ main #about figure.active {
     gap: 10px;
   }
 
-  main #about {
+  main #about,
+  main #skill,
+  main #project {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%;
+  }
+
+  main #skill .skill-wrapper,
+  main #skill .skill-wrapper .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  main #skill .skill-wrapper .skill-list {
+    gap: 15px;
+  }
+
+  main #skill .skill-wrapper .skill-list article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #skill .skill-wrapper .skill-list article ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    list-style: none;
+  }
+
+  main #project figure {
+    background-image: url(../project-images/traveler.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 220.78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #skill .skill-wrapper figure,
+  main #skill .skill-wrapper figure img {
+    width: 100%;
   }
 
   main #about header,
-  main #about figure figcaption header {
+  main #about figure figcaption header,
+  main #skill header,
+  main #skill .skill-wrapper .skill-list article header {
     align-self: flex-start;
     display: flex;
     gap: 10px;
     align-items: center;
   }
 
-  main #about header h2 {
+  main #about header h2,
+  main #skill header h2 {
     font-size: 28px;
     color: #ec1c24;
     font-family: Orbitron;
@@ -367,7 +458,8 @@ main #about figure.active {
     gap: 10px;
   }
 
-  main #about figure figcaption header h3 {
+  main #about figure figcaption header h3,
+  main #skill .skill-wrapper .skill-list article header h3 {
     font-size: 24px;
     font-weight: normal;
     font-family: "open sans";
@@ -519,22 +611,57 @@ main #about figure.active {
     gap: 10px;
   }
 
-  main #about {
+  main #about,
+  main #skill {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 
+  main #skill .skill-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  main #skill .skill-wrapper .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  main #skill .skill-wrapper .skill-list article ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    list-style: none;
+  }
+
+  main #skill .skill-wrapper figure,
+  main #skill .skill-wrapper figure img {
+    width: 384px;
+  }
+
   main #about header,
-  main #about figure figcaption header {
+  main #about figure figcaption header,
+  main #skill header,
+  main #skill .skill-wrapper .skill-list header {
     align-self: flex-start;
     display: flex;
     gap: 10px;
     align-items: center;
   }
 
-  main #about header h2 {
+  main #about header h2,
+  main #skill header h2 {
     font-size: 32px;
     color: #ec1c24;
     font-family: Orbitron;
@@ -561,7 +688,8 @@ main #about figure.active {
     gap: 10px;
   }
 
-  main #about figure figcaption header h3 {
+  main #about figure figcaption header h3,
+  main #skill .skill-wrapper .skill-list article header h3 {
     font-size: 28px;
     font-weight: normal;
     font-family: "open sans";
@@ -687,12 +815,22 @@ main #about figure.active {
     width: 500px;
   }
 
+  main #skill .skill-wrapper figure,
+  main #skill .skill-wrapper figure img {
+    width: 500px;
+  }
+
   main #home article header h1 {
     font-size: 40px;
   }
 
-  main #about header h2 {
+  main #about header h2,
+  main #skill header h2 {
     font-size: 36px;
+  }
+
+  main #skill .skill-wrapper .skill-list article header h3 {
+    font-size: 32px;
   }
 
   main #home article p {

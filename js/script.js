@@ -19,7 +19,7 @@ toggleNavigation();
 function animation() {
 
     const options = {
-        rootMargin:'0px 0px -200px 0px'
+        rootMargin:'0px 0px -300px 0px'
     }
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -34,5 +34,11 @@ function animation() {
     }, options)
     const aboutMe = document.querySelector('main #about figure');
     observer.observe(aboutMe);
+    const tool = document.querySelectorAll('main #skill .skill-wrapper .skill-list article');
+    tool.forEach(tools => {
+        observer.observe(tools);
+    });
+    const skillImg = document.querySelector('main #skill .skill-wrapper figure');
+    observer.observe(skillImg);
 }
 animation();
