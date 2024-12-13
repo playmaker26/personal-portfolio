@@ -34,11 +34,21 @@ function animation() {
     }, options)
     const aboutMe = document.querySelector('main #about figure');
     observer.observe(aboutMe);
-    const tool = document.querySelectorAll('main #skill .skill-wrapper .skill-list article');
-    tool.forEach(tools => {
-        observer.observe(tools);
+    const skill = document.querySelectorAll('main #skill .skill-wrapper .skill-list article');
+    skill.forEach(skills => {
+        observer.observe(skills);
     });
     const skillImg = document.querySelector('main #skill .skill-wrapper figure');
     observer.observe(skillImg);
+
+    const project = document.querySelectorAll('.project-container');
+    project.forEach(projects => {
+        observer.observe(projects);
+    });
 }
 animation();
+
+let formValidation = function() {
+
+}
+formValidation();

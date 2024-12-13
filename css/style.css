@@ -244,14 +244,16 @@ section {
 
 main #about figure,
 main #skill .skill-wrapper figure,
-main #skill .skill-wrapper .skill-list article {
+main #skill .skill-wrapper .skill-list article,
+main #project article .project-wrapper .project-container {
   opacity: 0;
   transition: all ease-in 0.8s;
 }
 
 main #about figure.active,
 main #skill .skill-wrapper figure.active,
-main #skill .skill-wrapper .skill-list article.active {
+main #skill .skill-wrapper .skill-list article.active,
+main #project article .project-wrapper .project-container.active {
   opacity: 1;
 }
 
@@ -287,8 +289,24 @@ i {
   color: #211f1f;
 }
 
+.dev {
+  color: black;
+}
+
+.facebook {
+  color: #0165e1;
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
 .youtube {
   color: red;
+}
+
+.live-demo {
+  color: #4f42b5;
 }
 
 .header-icon {
@@ -371,7 +389,105 @@ i {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  main #project article .project-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  main #project article .project-wrapper .project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     width: 100%;
+  }
+
+  main #project article .project-wrapper .project-container figure {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 220.78px;
+  }
+
+  main #project article .project-wrapper .project-container .travel-agency {
+    background-image: url(../project-images/traveler.jpeg);
+  }
+
+  main #project article .project-wrapper .project-container .memory-game {
+    background-image: url(../project-images/memory-game.png);
+    width: 219px;
+    height: 221px;
+  }
+
+  main #project article .project-wrapper .project-container .landing-page {
+    background-image: url(../project-images/100-gamer.jpg);
+  }
+
+  main #project article .project-wrapper .project-container .to-do-list {
+    background-image: url(../project-images/taskly.png);
+  }
+
+  main #project article .project-wrapper .project-container .drawing-app {
+    background-image: url(../project-images/canvascraft.png);
+    width: 219px;
+    height: 214.15px;
+  }
+
+  main #project article .project-wrapper .project-container figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  main #project article .project-wrapper .project-container figcaption header {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main
+    #project
+    article
+    .project-wrapper
+    .project-container
+    figcaption
+    header
+    h4 {
+    font-size: 20px;
+    color: #ec1c24;
+    font-weight: bold;
+    font-family: Orbitron;
+  }
+
+  main #project article .project-wrapper .project-container figcaption ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+  }
+
+  main #project article .project-wrapper .project-container figcaption ul li a {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "open sans";
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #5e080b;
   }
 
   main #skill .skill-wrapper,
@@ -387,7 +503,8 @@ i {
     gap: 15px;
   }
 
-  main #skill .skill-wrapper .skill-list article {
+  main #skill .skill-wrapper .skill-list article,
+  main #project article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -402,19 +519,6 @@ i {
     list-style: none;
   }
 
-  main #project figure {
-    background-image: url(../project-images/traveler.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 220.78px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   main #skill .skill-wrapper figure,
   main #skill .skill-wrapper figure img {
     width: 100%;
@@ -423,7 +527,9 @@ i {
   main #about header,
   main #about figure figcaption header,
   main #skill header,
-  main #skill .skill-wrapper .skill-list article header {
+  main #skill .skill-wrapper .skill-list article header,
+  main #project header,
+  main #project article header {
     align-self: flex-start;
     display: flex;
     gap: 10px;
@@ -431,7 +537,8 @@ i {
   }
 
   main #about header h2,
-  main #skill header h2 {
+  main #skill header h2,
+  main #project header h2 {
     font-size: 28px;
     color: #ec1c24;
     font-family: Orbitron;
@@ -459,14 +566,16 @@ i {
   }
 
   main #about figure figcaption header h3,
-  main #skill .skill-wrapper .skill-list article header h3 {
+  main #skill .skill-wrapper .skill-list article header h3,
+  main #project article header h3 {
     font-size: 24px;
     font-weight: normal;
     font-family: "open sans";
     color: #5e080b;
   }
 
-  main #about figure figcaption p {
+  main #about figure figcaption p,
+  main #project article .project-wrapper .project-container figcaption p {
     font-size: 12px;
     line-height: 22px;
     color: #5e080b;
@@ -484,6 +593,13 @@ i {
     animation-delay: 0.4s;
     opacity: 0;
     transform: translateX(-100%);
+  }
+
+  main #project article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   main #home article {
@@ -612,11 +728,111 @@ i {
   }
 
   main #about,
-  main #skill {
+  main #skill,
+  main #project {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  main #project article .project-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    gap: 10px;
+  }
+
+  main #project article .project-wrapper .project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 365px;
+  }
+
+  main #project article .project-wrapper .project-container figure {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 365px;
+    height: 220.78px;
+  }
+
+  main #project article .project-wrapper .project-container .travel-agency {
+    background-image: url(../project-images/traveler.jpeg);
+  }
+
+  main #project article .project-wrapper .project-container .memory-game {
+    background-image: url(../project-images/memory-game.png);
+    width: 219px;
+    height: 221px;
+  }
+
+  main #project article .project-wrapper .project-container .landing-page {
+    background-image: url(../project-images/100-gamer.jpg);
+  }
+
+  main #project article .project-wrapper .project-container .to-do-list {
+    background-image: url(../project-images/taskly.png);
+  }
+
+  main #project article .project-wrapper .project-container .drawing-app {
+    background-image: url(../project-images/canvascraft.png);
+    width: 219px;
+    height: 214.15px;
+  }
+
+  main #project article .project-wrapper .project-container figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  main #project article .project-wrapper .project-container figcaption header {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main
+    #project
+    article
+    .project-wrapper
+    .project-container
+    figcaption
+    header
+    h4 {
+    font-size: 24px;
+    color: #ec1c24;
+    font-weight: bold;
+    font-family: Orbitron;
+  }
+
+  main #project article .project-wrapper .project-container figcaption ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+  }
+
+  main #project article .project-wrapper .project-container figcaption ul li a {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "open sans";
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #5e080b;
+    transition: all ease-in 0.7s;
   }
 
   main #skill .skill-wrapper {
@@ -653,7 +869,8 @@ i {
   main #about header,
   main #about figure figcaption header,
   main #skill header,
-  main #skill .skill-wrapper .skill-list header {
+  main #skill .skill-wrapper .skill-list header,
+  main #project header {
     align-self: flex-start;
     display: flex;
     gap: 10px;
@@ -661,7 +878,8 @@ i {
   }
 
   main #about header h2,
-  main #skill header h2 {
+  main #skill header h2,
+  main #project header h2 {
     font-size: 32px;
     color: #ec1c24;
     font-family: Orbitron;
@@ -689,14 +907,16 @@ i {
   }
 
   main #about figure figcaption header h3,
-  main #skill .skill-wrapper .skill-list article header h3 {
+  main #skill .skill-wrapper .skill-list article header h3,
+  main #project article header h3 {
     font-size: 28px;
     font-weight: normal;
     font-family: "open sans";
     color: #5e080b;
   }
 
-  main #about figure figcaption p {
+  main #about figure figcaption p,
+  main #project article .project-wrapper .project-container figcaption p {
     font-size: 14px;
     line-height: 26px;
     color: #5e080b;
@@ -815,6 +1035,16 @@ i {
     width: 500px;
   }
 
+  main #project article .project-wrapper .project-container {
+    gap: 10px;
+    width: 70%;
+  }
+
+  main #project article .project-wrapper .project-container figure {
+    width: 100%;
+    height: 220.78px;
+  }
+
   main #skill .skill-wrapper figure,
   main #skill .skill-wrapper figure img {
     width: 500px;
@@ -825,19 +1055,41 @@ i {
   }
 
   main #about header h2,
-  main #skill header h2 {
+  main #skill header h2,
+  main #project header h2 {
     font-size: 36px;
   }
 
-  main #skill .skill-wrapper .skill-list article header h3 {
+  main #skill .skill-wrapper .skill-list article header h3,
+  main #project article header h3 {
     font-size: 32px;
+  }
+
+  main
+    #project
+    article
+    .project-wrapper
+    .project-container
+    figcaption
+    header
+    h4 {
+    font-size: 28px;
   }
 
   main #home article p {
     font-size: 14px;
   }
 
-  .main-header nav ul li a:hover {
+  .main-header nav ul li a:hover,
+  main
+    #project
+    article
+    .project-wrapper
+    .project-container
+    figcaption
+    ul
+    li
+    a:hover {
     color: #f8aaad;
     font-weight: bold;
   }
