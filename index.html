@@ -289,41 +289,56 @@
             Contact Me <i class="fa-solid fa-paper-plane header-icon"></i>
           </h2>
         </header>
-        <div>
-          <article>
+        <div class="contact-container">
+          <article class="contact-info">
             <ul>
               <li><i class="fa-brands fa-square-facebook facebook"></i></li>
               <li><i class="fa-brands fa-dev dev"></i></li>
               <li><i class="fa-brands fa-square-twitter twitter"></i></li>
             </ul>
             <address>
-              <p>E-mail</p>
+              <p>E-mail:</p>
               <a href="#">jorge.artaza22@gmail.com</a>
             </address>
           </article>
 
           <form action="" class="contact">
             <div>
-              <label for="name">Name</label>
+              <label for="name" class="name-label">Name</label>
               <input type="text" id="name" />
             </div>
             <div>
-              <label for="subject">Subject</label>
+              <label for="subject" class="subject-label">Subject</label>
               <input type="text" id="subject" />
             </div>
             <div>
-              <label for="email">E-mail</label>
+              <label for="email" class="email-label">E-mail</label>
               <input type="text" id="email" />
             </div>
             <div>
-              <label for="message">Message</label>
+              <label for="message" class="message-label">Message</label>
               <textarea id="message"></textarea>
             </div>
-            <button type="submit"></button>
+            <button type="submit" class="formbtn">Send message</button>
           </form>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li><i class="fa-brands fa-square-facebook footer-icon"></i></li>
+        <li><i class="fa-brands fa-square-twitter footer-icon"></i></li>
+        <li><i class="fa-brands fa-linkedin footer-icon"></i></li>
+      </ul>
+    </footer>
   </body>
 </html>
