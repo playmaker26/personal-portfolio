@@ -52,39 +52,50 @@ function animation() {
 }
 animation();
 
-let formValidation = function() {
-let name = document.querySelector('#name')
-let subject = document.querySelector('#subject');
-let email = document.querySelector('#email');
-let message = document.querySelector('#message');
-let form = document.querySelector('.contact');
-
-form.addEventListener('submit', (e) =>{
-   
-    if(name.value === '' || name.value === null) {
-        document.querySelector('.name-label').style.color = '#FF0000';
-        document.querySelector('.name-label').textContent = 'Type your name';
+let formValidation = function () {
+    let form = document.querySelector(".contact");
+    let name = document.querySelector("#name");
+    let subject = document.querySelector("#subject");
+    let email = document.querySelector("#email");
+    let message = document.querySelector("#message");
+  
+    form.addEventListener("submit", (e) => {
+      let isValid = true;
+  
+      // Name Validation
+      if (name.value.trim() === "") {
+        document.querySelector(".name-label").style.color = "#FF0000";
+        document.querySelector(".name-label").textContent = "Type your name";
+        isValid = false;
+      }
+  
+      // Subject Validation
+      if (subject.value.trim() === "") {
+        document.querySelector(".subject-label").style.color = "#FF0000";
+        document.querySelector(".subject-label").textContent = "Type a subject";
+        isValid = false;
+      }
+  
+      // Email Validation
+      if (email.value.trim() === "") {
+        document.querySelector(".email-label").style.color = "#FF0000";
+        document.querySelector(".email-label").textContent = "Type your email";
+        isValid = false;
+      }
+  
+      // Message Validation
+      if (message.value.trim() === "") {
+        document.querySelector(".message-label").style.color = "#FF0000";
+        document.querySelector(".message-label").textContent = "Type your message";
+        isValid = false;
+      }
+  
+      // Prevent form submission if any field is invalid
+      if (!isValid) {
         e.preventDefault();
-    }
-
-    if(subject.value === '' || subject.value === null) {
-        document.querySelector('.subject-label').style.color = '#FF0000';
-        document.querySelector('.subject-label').textContent = 'Type your a subject';
-        e.preventDefault();
-    }
-
-    if(email.value === '' || email.value === null) {
-        document.querySelector('.email-label').style.color = '#FF0000';
-        document.querySelector('.email-label').textContent = 'Type your E-mail';
-        e.preventDefault();
-    }
-
-    if (message.value === '' || message.value === null) {
-        document.querySelector('.message-label').style.color = '#FF0000';
-        document.querySelector('.message-label').textContent = 'Type your message';
-        e.preventDefault();
-    }
-});
-
-}
-formValidation();
+      }
+    });
+  };
+  
+  formValidation();
+    
