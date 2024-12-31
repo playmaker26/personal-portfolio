@@ -245,7 +245,9 @@ section {
 main #about figure,
 main #skill .skill-wrapper figure,
 main #skill .skill-wrapper .skill-list article,
-main #project article .project-wrapper .project-container {
+main #project article .project-wrapper .project-container,
+main #contact .contact-container .contact-info,
+main #contact .contact-container .contact {
   opacity: 0;
   transition: all ease-in 0.8s;
 }
@@ -253,7 +255,9 @@ main #project article .project-wrapper .project-container {
 main #about figure.active,
 main #skill .skill-wrapper figure.active,
 main #skill .skill-wrapper .skill-list article.active,
-main #project article .project-wrapper .project-container.active {
+main #project article .project-wrapper .project-container.active,
+main #contact .contact-container .contact-info.active,
+main #contact .contact-container .contact.active {
   opacity: 1;
 }
 
@@ -311,6 +315,14 @@ i {
 
 .header-icon {
   color: #5e080b;
+}
+
+footer {
+  background-color: #5e080b;
+}
+
+.footer-icon {
+  color: #faf9f6;
 }
 
 @media only screen and (max-width: 767px) {
@@ -374,6 +386,10 @@ i {
     text-decoration: none;
   }
 
+  main {
+    min-height: calc(100vh - 94px);
+  }
+
   main #home {
     display: flex;
     flex-direction: column;
@@ -384,11 +400,142 @@ i {
 
   main #about,
   main #skill,
-  main #project {
+  main #project,
+  main #contact {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+  }
+
+  footer nav ul li {
+    padding: 10px;
+  }
+
+  footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    list-style: none;
+  }
+
+  footer nav ul li a {
+    font-size: 8px;
+    font-family: "open sans";
+    font-weight: bold;
+    color: #faf9f6;
+    text-decoration: none;
+  }
+
+  main #contact .contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+  }
+
+  main #contact .contact-container article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #contact .contact-container article ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+  }
+
+  main #contact .contact-container article address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #contact .contact-container article address p {
+    font-size: 10px;
+    font-family: "open sans";
+    font-weight: normal;
+    color: #5e080b;
+  }
+
+  main #contact .contact-container article address a {
+    font-size: 10px;
+    font-family: "open sans";
+    font-weight: bold;
+    color: #ec1c24;
+    text-decoration: none;
+  }
+
+  main #contact .contact-container .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    width: 360px;
+    padding: 0 0 20px 0;
+  }
+
+  main #contact .contact-container .contact button {
+    align-self: flex-start;
+    width: 136px;
+    padding: 5px;
+    text-align: center;
+    background-color: #ec1c24;
+    font-size: 16px;
+    font-weight: bold;
+    color: #faf9f6;
+    font-family: "open sans";
+    border-radius: 5px;
+  }
+
+  main #contact .contact-container .contact div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  main #contact .contact-container .contact div label {
+    font-size: 12px;
+    font-family: "open sans";
+    font-weight: normal;
+    color: #5e080b;
+  }
+
+  main #contact .contact-container .contact div input {
+    border-radius: 5px;
+    border: 1px solid #5e080b;
+    height: 45px;
+  }
+
+  main #contact .contact-container .contact div textarea {
+    border-radius: 5px;
+    border: 1px solid #5e080b;
+    height: 250px;
   }
 
   main #project article .project-wrapper {
@@ -529,7 +676,8 @@ i {
   main #skill header,
   main #skill .skill-wrapper .skill-list article header,
   main #project header,
-  main #project article header {
+  main #project article header,
+  main #contact header {
     align-self: flex-start;
     display: flex;
     gap: 10px;
@@ -538,7 +686,8 @@ i {
 
   main #about header h2,
   main #skill header h2,
-  main #project header h2 {
+  main #project header h2,
+  main #contact header h2 {
     font-size: 28px;
     color: #ec1c24;
     font-family: Orbitron;
@@ -729,11 +878,149 @@ i {
 
   main #about,
   main #skill,
-  main #project {
+  main #project,
+  main #contact {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  main {
+    min-height: calc(100vh - 74px);
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+  }
+
+  footer nav ul li {
+    padding: 10px;
+  }
+
+  footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    list-style: none;
+  }
+
+  footer nav ul li a {
+    font-size: 8px;
+    font-family: "open sans";
+    font-weight: bold;
+    color: #faf9f6;
+    text-decoration: none;
+    transition: all ease-in 0.7s;
+  }
+
+  main #contact .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  main #contact .contact-container article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #contact .contact-container article ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+  }
+
+  main #contact .contact-container article address {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main #contact .contact-container article address p {
+    font-size: 12px;
+    font-family: "open sans";
+    font-weight: normal;
+    color: #5e080b;
+  }
+
+  main #contact .contact-container article address a {
+    font-size: 12px;
+    font-family: "open sans";
+    font-weight: bold;
+    color: #ec1c24;
+    text-decoration: none;
+  }
+
+  main #contact .contact-container .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    width: 384px;
+    padding: 0 0 20px 0;
+  }
+
+  main #contact .contact-container .contact button {
+    align-self: flex-start;
+    width: 136px;
+    padding: 5px;
+    text-align: center;
+    background-color: #ec1c24;
+    font-size: 16px;
+    font-weight: bold;
+    color: #faf9f6;
+    font-family: "open sans";
+    border-radius: 5px;
+    transition: all ease-in 0.7s;
+  }
+
+  main #contact .contact-container .contact div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  main #contact .contact-container .contact div label {
+    font-size: 12px;
+    font-family: "open sans";
+    font-weight: normal;
+    color: #5e080b;
+  }
+
+  main #contact .contact-container .contact div input {
+    border-radius: 5px;
+    border: 1px solid #5e080b;
+    height: 45px;
+  }
+
+  main #contact .contact-container .contact div textarea {
+    border-radius: 5px;
+    border: 1px solid #5e080b;
+    height: 250px;
   }
 
   main #project article .project-wrapper {
@@ -870,7 +1157,8 @@ i {
   main #about figure figcaption header,
   main #skill header,
   main #skill .skill-wrapper .skill-list header,
-  main #project header {
+  main #project header,
+  main #contact header {
     align-self: flex-start;
     display: flex;
     gap: 10px;
@@ -879,7 +1167,8 @@ i {
 
   main #about header h2,
   main #skill header h2,
-  main #project header h2 {
+  main #project header h2,
+  main #contact header h2 {
     font-size: 32px;
     color: #ec1c24;
     font-family: Orbitron;
@@ -1056,7 +1345,8 @@ i {
 
   main #about header h2,
   main #skill header h2,
-  main #project header h2 {
+  main #project header h2,
+  main #contact header h2 {
     font-size: 36px;
   }
 
@@ -1080,6 +1370,10 @@ i {
     font-size: 14px;
   }
 
+  main #contact .contact-container .contact {
+    width: 500px;
+  }
+
   .main-header nav ul li a:hover,
   main
     #project
@@ -1089,15 +1383,19 @@ i {
     figcaption
     ul
     li
-    a:hover {
+    a:hover,
+  footer nav ul li a:hover {
     color: #f8aaad;
     font-weight: bold;
+    cursor: pointer;
   }
 
   main #home article a:hover,
-  main #about figure figcaption a:hover {
+  main #about figure figcaption a:hover,
+  main #contact .contact-container .contact button:hover {
     color: #5e080b;
     font-weight: bold;
     background-color: #f8aaad;
+    cursor: pointer;
   }
 }
