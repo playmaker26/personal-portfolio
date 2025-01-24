@@ -1,178 +1,4 @@
-/*
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com
-Twitter: @rich_clark
-*/
-
-html,
-body,
-div,
-span,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-body {
-  line-height: 1;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-nav ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-/* change colours to suit your needs */
-ins {
-  background-color: #ff9;
-  color: #000;
-  text-decoration: none;
-}
-
-/* change colours to suit your needs */
-mark {
-  background-color: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-
-del {
-  text-decoration: line-through;
-}
-
-abbr[title],
-dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* change border colour to suit your needs */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #cccccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-input,
-select {
-  vertical-align: middle;
-}
-
-/*My code*/
+/*Start of global styling*/
 * {
   box-sizing: border-box;
 }
@@ -182,516 +8,345 @@ html {
 }
 
 body {
-  background-color: #fffff0;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 100%;
-}
-
-.main-header {
-  background-color: #fffff0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.main-header nav ul li {
-  padding: 10px;
-}
-
-.main-header a {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ec1c24;
-  text-decoration: none;
-  font-family: "open sans";
-  padding: 10px;
-  width: 100%;
-}
-
-.main-header nav {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: flex-end;
+  background-color: #1b1f38;
 }
 
 section {
   min-height: 100vh;
 }
 
-@keyframes slidein {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.main-header,
+.main-header .logo,
+.main-header .logo a,
+.main-header nav,
+.main-header nav ul,
+.main-header nav ul li,
+.main-header nav ul li a,
+main #home article header,
+main #home article p,
+main #home article a,
+main #project ul li figcaption p,
+main #project header,
+main #skill header,
+main #about header,
+main #contact header {
+  padding: 10px;
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+h1,
+h2,
+h3 {
+  color: #6c63ff;
+  font-family: "open sans";
 }
 
-main #about figure,
-main #skill .skill-wrapper figure,
-main #skill .skill-wrapper .skill-list article,
-main #project article .project-wrapper .project-container,
-main #contact .contact-container .contact-info,
-main #contact .contact-container .contact {
-  opacity: 0;
-  transition: all ease-in 0.8s;
+main #home article header,
+main #skill header {
+  display: flex;
+  align-items: center;
 }
 
-main #about figure.active,
-main #skill .skill-wrapper figure.active,
-main #skill .skill-wrapper .skill-list article.active,
-main #project article .project-wrapper .project-container.active,
-main #contact .contact-container .contact-info.active,
-main #contact .contact-container .contact.active {
-  opacity: 1;
+main #project ul li figure {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
-
-i {
-  font-size: 20px;
-}
-
-.html {
-  color: #e34c26;
-}
-
-.css {
-  color: #264de4;
-}
-
-.js {
-  color: #f0db4f;
-}
-
-.php {
-  color: #474a8a;
-}
-
-.node {
-  color: #68a063;
-}
-
-.figma {
-  color: #0acf83;
-}
-
-.github {
-  color: #211f1f;
-}
-
-.dev {
-  color: black;
-}
-
-.facebook {
-  color: #0165e1;
-}
-
-.twitter {
-  color: #1da1f2;
-}
-
-.youtube {
-  color: red;
-}
-
-.live-demo {
-  color: #4f42b5;
-}
-
-.header-icon {
-  color: #5e080b;
-}
-
-footer {
-  background-color: #5e080b;
-}
-
-.footer-icon {
-  color: #faf9f6;
-}
+/*End of global styling*/
 
 @media only screen and (max-width: 767px) {
+  /*Start of header*/
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-header .logo a {
+    font-size: 18px;
+    color: #39ff14;
+    font-family: Roboto;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .main-header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .main-header nav button {
     position: relative;
     display: block;
-    width: 42px;
+    width: 40px;
     appearance: none;
     background: none;
     outline: none;
     border: none;
   }
+
   .main-header nav button .bar,
-  .main-header nav button:after,
+  .main-header nav button::after,
   .main-header nav button::before {
-    display: block;
     content: "";
+    display: block;
     width: 100%;
     height: 5px;
-    background-color: #5e080b;
-    margin: 3px 0px;
-    border-radius: 5px;
-    transition: 0.4s ease-in;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    margin: 4px 0px;
+    transition: all ease-out 0.6s;
   }
 
   .main-header nav button.active::before {
-    transform: rotate(-45deg) translate(-5px, 5px);
-    background-color: #ec1c24;
+    transform: rotate(-45deg) translate(-3px, 3px);
+  }
+
+  .main-header nav button.active::after {
+    transform: rotate(45deg) translate(-9px, -9px);
   }
 
   .main-header nav button.active .bar {
     opacity: 0;
   }
 
-  .main-header nav button.active::after {
-    transform: rotate(45deg) translate(-5px, -5px);
-    background-color: #ec1c24;
-  }
-
   .main-header nav ul {
     position: absolute;
     right: 0;
-    top: 38px;
-    width: 100%;
-    background-color: #5e080b;
+    background-color: #1b1f38;
+    top: 78px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    opacity: 0;
-    transition: all ease-in 0.7s;
+    width: 100%;
+    gap: 10px;
     z-index: 1;
+    transition: all ease-in 0.3s;
+    opacity: 0;
+  }
+
+  .main-header nav ul li {
+    margin: 0 0 10px 0;
   }
 
   .main-header nav ul li a {
-    color: #faf9f6;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: "open sans";
+    text-align: center;
+    color: #f2f2f2;
+    font-weight: 400;
+    font-family: Roboto;
     text-decoration: none;
   }
+  /*End of header*/
 
+  /*Start of main styling*/
   main {
-    min-height: calc(100vh - 94px);
+    min-height: calc(100vh - 138px);
   }
+  /*End of main styling*/
 
+  /*Start of home page styling*/
   main #home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 25px;
+  }
+
+  main #home figure,
+  main #home figure img {
+    width: 100%;
+  }
+
+  main #home article {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
 
-  main #about,
-  main #skill,
-  main #project,
-  main #contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  footer nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-  }
-
-  footer nav ul li {
-    padding: 10px;
-  }
-
-  footer ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    list-style: none;
-  }
-
-  footer nav ul li a {
-    font-size: 8px;
+  main #home article header h1 {
+    font-size: 30px;
     font-family: "open sans";
     font-weight: bold;
-    color: #faf9f6;
+  }
+
+  main #home article p {
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Roboto;
+    color: #f2f2f2;
+  }
+
+  main #home article a {
+    background-color: #39ff14;
     text-decoration: none;
-  }
-
-  main #contact .contact-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
-  }
-
-  main #contact .contact-container article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  main #contact .contact-container article ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    list-style: none;
-  }
-
-  main #contact .contact-container article address {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-  }
-
-  main #contact .contact-container article address p {
-    font-size: 10px;
-    font-family: "open sans";
-    font-weight: normal;
-    color: #5e080b;
-  }
-
-  main #contact .contact-container article address a {
-    font-size: 10px;
-    font-family: "open sans";
-    font-weight: bold;
-    color: #ec1c24;
-    text-decoration: none;
-  }
-
-  main #contact .contact-container .contact {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #fff;
-    width: 360px;
-    padding: 0 0 20px 0;
-  }
-
-  main #contact .contact-container .contact button {
-    align-self: flex-start;
-    width: 136px;
-    padding: 5px;
     text-align: center;
-    background-color: #ec1c24;
-    font-size: 16px;
-    font-weight: bold;
-    color: #faf9f6;
-    font-family: "open sans";
-    border-radius: 5px;
-  }
-
-  main #contact .contact-container .contact div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    color: #000;
+    font-weight: 500;
+    font-family: Roboto;
+    font-size: 14px;
+    border-radius: 3px;
     align-self: flex-start;
-    width: 100%;
   }
+  /*End of home page styling*/
 
-  main #contact .contact-container .contact div label {
-    font-size: 12px;
-    font-family: "open sans";
-    font-weight: normal;
-    color: #5e080b;
-  }
-
-  main #contact .contact-container .contact div input {
-    border-radius: 5px;
-    border: 1px solid #5e080b;
-    height: 45px;
-  }
-
-  main #contact .contact-container .contact div textarea {
-    border-radius: 5px;
-    border: 1px solid #5e080b;
-    height: 250px;
-  }
-
-  main #project article .project-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
+  /*Start project page styling*/
+  main #project {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    gap: 25px;
   }
 
-  main #project article .project-wrapper .project-container {
+  main #project ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    width: 100%;
+    gap: 25px;
+  }
+
+  main #project ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     width: 100%;
   }
 
-  main #project article .project-wrapper .project-container figure {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
+  main #project ul li .traveler-figure {
     height: 220.78px;
+    background-image: url("../project-images/traveler.jpeg");
   }
 
-  main #project article .project-wrapper .project-container .travel-agency {
-    background-image: url(../project-images/traveler.jpeg);
+  main #project ul li .memory-game-figure {
+    width: 249px;
+    height: 249px;
+    background-image: url("../project-images/memory-game.png");
   }
 
-  main #project article .project-wrapper .project-container .memory-game {
-    background-image: url(../project-images/memory-game.png);
-    width: 219px;
-    height: 221px;
+  main #project ul li .taskly-figure {
+    height: 177.12px;
+    background-image: url("../project-images/taskly.png");
   }
 
-  main #project article .project-wrapper .project-container .landing-page {
-    background-image: url(../project-images/100-gamer.jpg);
+  main #project ul li .gamer-figure {
+    height: 205.71px;
+    background-image: url("../project-images/100-gamer.jpg");
   }
 
-  main #project article .project-wrapper .project-container .to-do-list {
-    background-image: url(../project-images/taskly.png);
+  main #project ul li .canvascraft-figure {
+    width: 250px;
+    height: 250px;
+    background-image: url("../project-images/canvascraft.png");
   }
 
-  main #project article .project-wrapper .project-container .drawing-app {
-    background-image: url(../project-images/canvascraft.png);
-    width: 219px;
-    height: 214.15px;
+  main #project ul li figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  main #project article .project-wrapper .project-container figcaption {
+  main #project ul li figcaption header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #project ul li figcaption header h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  main #project ul li figcaption p {
+    font-size: 14px;
+    font-family: Roboto;
+    line-height: 18px;
+    color: #f2f2f2;
+  }
+
+  main #project ul li figcaption ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  main #project ul li figcaption ul li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
-  }
-
-  main #project article .project-wrapper .project-container figcaption header {
-    align-self: center;
-    display: flex;
-    justify-content: center;
     align-items: center;
-  }
-
-  main
-    #project
-    article
-    .project-wrapper
-    .project-container
-    figcaption
-    header
-    h4 {
-    font-size: 20px;
-    color: #ec1c24;
-    font-weight: bold;
-    font-family: Orbitron;
-  }
-
-  main #project article .project-wrapper .project-container figcaption ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
     gap: 10px;
-  }
-
-  main #project article .project-wrapper .project-container figcaption ul li a {
+    text-decoration: none;
+    color: #f2f2f2;
     font-size: 12px;
     font-weight: 500;
-    font-family: "open sans";
-    padding: 10px;
+    font-family: Roboto;
+  }
+
+  main #project ul li figcaption ul li a i {
+    color: #39ff14;
+    font-size: 18px;
+  }
+  /*End project page styling*/
+
+  /*Start of skills page styling*/
+  main #skill {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  main #skill ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  main #skill ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    text-decoration: none;
-    color: #5e080b;
+    text-align: center;
+    color: #6c63ff;
+    font-family: "open sans";
+    font-weight: 500;
+    font-size: 24px;
   }
 
-  main #skill .skill-wrapper,
-  main #skill .skill-wrapper .skill-list {
+  main #skill ul li i {
+    font-size: 80px;
+    color: #f2f2f2;
+  }
+
+  /*Start of about me page styling*/
+  main #about {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-self: flex-start;
-    width: 100%;
+    gap: 25px;
   }
 
-  main #skill .skill-wrapper .skill-list {
-    gap: 15px;
-  }
-
-  main #skill .skill-wrapper .skill-list article,
-  main #project article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  main #skill .skill-wrapper .skill-list article ul {
+  main #about header {
     display: flex;
     align-items: center;
-    width: 100%;
-    gap: 20px;
-    list-style: none;
-  }
-
-  main #skill .skill-wrapper figure,
-  main #skill .skill-wrapper figure img {
-    width: 100%;
-  }
-
-  main #about header,
-  main #about figure figcaption header,
-  main #skill header,
-  main #skill .skill-wrapper .skill-list article header,
-  main #project header,
-  main #project article header,
-  main #contact header {
-    align-self: flex-start;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  main #about header h2,
-  main #skill header h2,
-  main #project header h2,
-  main #contact header h2 {
-    font-size: 28px;
-    color: #ec1c24;
-    font-family: Orbitron;
-    font-weight: bold;
   }
 
   main #about figure {
@@ -700,479 +355,472 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
   }
 
   main #about figure img {
+    width: 220px;
     border-radius: 50%;
-    width: 134px;
-    border: 1px solid #ec1c24;
   }
 
   main #about figure figcaption {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  main #about figure figcaption header h3,
-  main #skill .skill-wrapper .skill-list article header h3,
-  main #project article header h3 {
-    font-size: 24px;
-    font-weight: normal;
-    font-family: "open sans";
-    color: #5e080b;
-  }
-
-  main #about figure figcaption p,
-  main #project article .project-wrapper .project-container figcaption p {
-    font-size: 12px;
-    line-height: 22px;
-    color: #5e080b;
-    font-family: "open sans";
-  }
-
-  main #about figure figcaption a {
-    width: 112px;
-  }
-
-  main #home figure,
-  main #home figure img {
     width: 100%;
-    animation: slidein 0.7s ease forwards;
-    animation-delay: 0.4s;
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  main #project article {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 
-  main #home article {
+  main #about figure figcaption p {
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 22px;
+    color: #f2f2f2;
+  }
+
+  /*End of about me page styling*/
+
+  /*Start of contact page styling*/
+  main #contact {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
-    gap: 10px;
-    animation: appear 0.9s forwards;
-    animation-delay: 0.3;
-    opacity: 0;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
   }
 
-  main #home article header {
+  main #contact header {
     display: flex;
+    flex-direction: column;
+    gap: 11px;
+    justify-content: center;
+    align-self: flex-start;
   }
 
-  main #home article header h1 {
-    font-size: 32px;
-    font-family: "open sans";
-    color: #5e080b;
-    font-weight: normal;
-  }
-
-  main #home article header h1 span,
-  main #about figure figcaption header h3 span {
-    color: #ec1c24;
-    font-weight: bold;
-    font-family: Orbitron;
-  }
-
-  main #home article p {
-    font-size: 12px;
-    font-weight: normal;
-    font-family: "open sans";
-    color: #5e080b;
-  }
-
-  main #home article p span {
-    color: #ec1c24;
-  }
-
-  main #home article a,
-  main #about figure figcaption a {
-    background-color: #ec1c24;
+  main #contact header p {
+    color: #f2f2f2;
+    font-size: 14px;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #5e080b;
-    text-align: center;
-    color: #faf9f6;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: "open sans";
-    text-decoration: none;
-    width: 161px;
+    font-family: Roboto;
+    line-height: 18px;
   }
+
+  main #contact form {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  main #contact form button {
+    align-self: flex-start;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background-color: #39ff14;
+    color: #000;
+    font-weight: 500;
+    font-family: Roboto;
+    font-size: 14px;
+  }
+
+  main #contact form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  main #contact form div label {
+    padding: 10px;
+    font-family: "open sans";
+    font-size: 14px;
+    color: #1b1f38;
+    font-weight: 500;
+  }
+
+  main #contact form div input {
+    height: 38px;
+    border-radius: 3px;
+    border: 1px solid #000;
+  }
+
+  main #contact form div textarea {
+    height: 98px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    resize: none;
+  }
+  /*End of contact page styling*/
+
+  /*Start of footer*/
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+  }
+
+  footer nav {
+    width: 100%;
+  }
+
+  footer nav ul {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1b1f38;
+  }
+
+  footer nav ul li a {
+    color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: Roboto;
+  }
+
+  footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 261px;
+  }
+
+  footer ul li i {
+    font-size: 18px;
+    color: #39ff14;
+  }
+  /*End of footer*/
+
+  /*Start h2 styling*/
+  main #project header h2,
+  main #skill header h2,
+  main #about header h2,
+  main #contact header h2 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  /*End of h2 styling*/
 }
 
 @media only screen and (min-width: 768px) {
+  /*Start of header*/
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-header .logo a {
+    font-size: 18px;
+    color: #39ff14;
+    font-family: Roboto;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .main-header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .main-header nav button {
     position: relative;
     display: block;
-    width: 42px;
-    height: 30px;
+    width: 40px;
     appearance: none;
     background: none;
     outline: none;
     border: none;
   }
+
   .main-header nav button .bar,
-  .main-header nav button:after,
+  .main-header nav button::after,
   .main-header nav button::before {
-    display: block;
     content: "";
+    display: block;
     width: 100%;
     height: 5px;
-    background-color: #5e080b;
-    margin: 3px 0px;
-    border-radius: 5px;
-    transition: 0.4s ease-in;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    margin: 4px 0px;
+    transition: all ease-out 0.6s;
   }
 
   .main-header nav button.active::before {
-    transform: rotate(-45deg) translate(-5px, 5px);
-    background-color: #ec1c24;
+    transform: rotate(-45deg) translate(-3px, 3px);
+  }
+
+  .main-header nav button.active::after {
+    transform: rotate(45deg) translate(-9px, -9px);
   }
 
   .main-header nav button.active .bar {
     opacity: 0;
   }
 
-  .main-header nav button.active::after {
-    transform: rotate(45deg) translate(-5px, -5px);
-    background-color: #ec1c24;
-  }
-
   .main-header nav ul {
     position: absolute;
     right: 0;
-    top: 38px;
-    width: 100%;
-    background-color: #5e080b;
+    background-color: #1b1f38;
+    top: 78px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    opacity: 0;
-    transition: all ease-in 0.7s;
+    width: 100%;
+    gap: 10px;
     z-index: 1;
+    transition: all ease-in 0.3s;
+    opacity: 0;
+  }
+
+  .main-header nav ul li {
+    margin: 0 0 10px 0;
   }
 
   .main-header nav ul li a {
-    color: #faf9f6;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: "open sans";
+    text-align: center;
+    color: #f2f2f2;
+    font-weight: 400;
+    font-family: Roboto;
     text-decoration: none;
   }
+  /*End of header*/
 
+  /*Start of main styling*/
+  main {
+    min-height: calc(100vh - 97px);
+  }
+  /*End of main styling*/
+
+  /*Start of home page styling*/
   main #home {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    gap: 25px;
+  }
+
+  main #home figure,
+  main #home figure img {
+    width: 382px;
+  }
+
+  main #home article {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
 
-  main #about,
-  main #skill,
-  main #project,
-  main #contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  main {
-    min-height: calc(100vh - 74px);
-  }
-
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-  }
-
-  footer nav ul li {
-    padding: 10px;
-  }
-
-  footer ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    list-style: none;
-  }
-
-  footer nav ul li a {
-    font-size: 8px;
+  main #home article header h1 {
+    font-size: 30px;
     font-family: "open sans";
     font-weight: bold;
-    color: #faf9f6;
+  }
+
+  main #home article p {
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Roboto;
+    color: #f2f2f2;
+  }
+
+  main #home article a {
+    background-color: #39ff14;
     text-decoration: none;
-    transition: all ease-in 0.7s;
-  }
-
-  main #contact .contact-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  main #contact .contact-container article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-  }
-
-  main #contact .contact-container article ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    list-style: none;
-  }
-
-  main #contact .contact-container article address {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-  }
-
-  main #contact .contact-container article address p {
-    font-size: 12px;
-    font-family: "open sans";
-    font-weight: normal;
-    color: #5e080b;
-  }
-
-  main #contact .contact-container article address a {
-    font-size: 12px;
-    font-family: "open sans";
-    font-weight: bold;
-    color: #ec1c24;
-    text-decoration: none;
-  }
-
-  main #contact .contact-container .contact {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #fff;
-    width: 384px;
-    padding: 0 0 20px 0;
-  }
-
-  main #contact .contact-container .contact button {
-    align-self: flex-start;
-    width: 136px;
-    padding: 5px;
     text-align: center;
-    background-color: #ec1c24;
-    font-size: 16px;
-    font-weight: bold;
-    color: #faf9f6;
-    font-family: "open sans";
-    border-radius: 5px;
-    transition: all ease-in 0.7s;
+    color: #000;
+    font-weight: 500;
+    font-family: Roboto;
+    font-size: 14px;
+    border-radius: 3px;
+    align-self: flex-start;
+    transition: all ease-in 0.5s;
   }
+  /*End of home page styling*/
 
-  main #contact .contact-container .contact div {
+  /*Start project page styling*/
+  main #project {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  main #project ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25px;
+  }
+
+  main #project ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
-    align-self: flex-start;
     width: 100%;
   }
 
-  main #contact .contact-container .contact div label {
-    font-size: 12px;
-    font-family: "open sans";
-    font-weight: normal;
-    color: #5e080b;
+  main #project ul .traveler,
+  main #project ul .taskly,
+  main #project ul .canvascraft {
+    width: 317px;
   }
 
-  main #contact .contact-container .contact div input {
-    border-radius: 5px;
-    border: 1px solid #5e080b;
-    height: 45px;
+  main #project ul .memory-game,
+  main #project ul .gamer {
+    width: 425px;
   }
 
-  main #contact .contact-container .contact div textarea {
-    border-radius: 5px;
-    border: 1px solid #5e080b;
-    height: 250px;
-  }
-
-  main #project article .project-wrapper {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: 2fr 2fr;
-    gap: 10px;
-  }
-
-  main #project article .project-wrapper .project-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    width: 365px;
-  }
-
-  main #project article .project-wrapper .project-container figure {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 365px;
+  main #project ul li .traveler-figure {
     height: 220.78px;
+    background-image: url("../project-images/traveler.jpeg");
   }
 
-  main #project article .project-wrapper .project-container .travel-agency {
-    background-image: url(../project-images/traveler.jpeg);
+  main #project ul li .memory-game-figure {
+    width: 249px;
+    height: 249px;
+    background-image: url("../project-images/memory-game.png");
   }
 
-  main #project article .project-wrapper .project-container .memory-game {
-    background-image: url(../project-images/memory-game.png);
-    width: 219px;
-    height: 221px;
+  main #project ul li .taskly-figure {
+    height: 177.12px;
+    background-image: url("../project-images/taskly.png");
   }
 
-  main #project article .project-wrapper .project-container .landing-page {
-    background-image: url(../project-images/100-gamer.jpg);
+  main #project ul li .gamer-figure {
+    height: 205.71px;
+    background-image: url("../project-images/100-gamer.jpg");
   }
 
-  main #project article .project-wrapper .project-container .to-do-list {
-    background-image: url(../project-images/taskly.png);
+  main #project ul li .canvascraft-figure {
+    width: 250px;
+    height: 250px;
+    background-image: url("../project-images/canvascraft.png");
   }
 
-  main #project article .project-wrapper .project-container .drawing-app {
-    background-image: url(../project-images/canvascraft.png);
-    width: 219px;
-    height: 214.15px;
+  main #project ul li figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  main #project article .project-wrapper .project-container figcaption {
+  main #project ul li figcaption header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #project ul li figcaption header h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  main #project ul li figcaption p {
+    font-size: 14px;
+    font-family: Roboto;
+    line-height: 18px;
+    color: #f2f2f2;
+  }
+
+  main #project ul li figcaption ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  main #project ul li figcaption ul li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
-  }
-
-  main #project article .project-wrapper .project-container figcaption header {
-    align-self: center;
-    display: flex;
-    justify-content: center;
     align-items: center;
-  }
-
-  main
-    #project
-    article
-    .project-wrapper
-    .project-container
-    figcaption
-    header
-    h4 {
-    font-size: 24px;
-    color: #ec1c24;
-    font-weight: bold;
-    font-family: Orbitron;
-  }
-
-  main #project article .project-wrapper .project-container figcaption ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
     gap: 10px;
-  }
-
-  main #project article .project-wrapper .project-container figcaption ul li a {
+    text-decoration: none;
+    color: #f2f2f2;
     font-size: 12px;
     font-weight: 500;
-    font-family: "open sans";
-    padding: 10px;
+    font-family: Roboto;
+    transition: all ease-in 0.8s;
+  }
+
+  main #project ul li figcaption ul li a i {
+    color: #39ff14;
+    font-size: 18px;
+    transition: all ease-in 0.3s;
+  }
+  /*End project page styling*/
+
+  /*Start of skills page styling*/
+  main #skill {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  main #skill ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 25px;
+  }
+
+  main #skill ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    text-decoration: none;
-    color: #5e080b;
-    transition: all ease-in 0.7s;
+    text-align: center;
+    color: #6c63ff;
+    font-family: "open sans";
+    font-weight: 500;
+    font-size: 24px;
   }
 
-  main #skill .skill-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-self: flex-start;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  main #skill ul li i {
+    font-size: 80px;
+    color: #f2f2f2;
   }
+  /*End of skills page styling*/
 
-  main #skill .skill-wrapper .skill-list {
+  /*Start of about me page styling*/
+  main #about {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-self: flex-start;
-    width: 100%;
+    gap: 25px;
   }
 
-  main #skill .skill-wrapper .skill-list article ul {
+  main #about header {
     display: flex;
     align-items: center;
-    width: 100%;
-    gap: 20px;
-    list-style: none;
-  }
-
-  main #skill .skill-wrapper figure,
-  main #skill .skill-wrapper figure img {
-    width: 384px;
-  }
-
-  main #about header,
-  main #about figure figcaption header,
-  main #skill header,
-  main #skill .skill-wrapper .skill-list header,
-  main #project header,
-  main #contact header {
-    align-self: flex-start;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  main #about header h2,
-  main #skill header h2,
-  main #project header h2,
-  main #contact header h2 {
-    font-size: 32px;
-    color: #ec1c24;
-    font-family: Orbitron;
-    font-weight: bold;
   }
 
   main #about figure {
@@ -1181,161 +829,196 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
   }
 
   main #about figure img {
+    width: 220px;
     border-radius: 50%;
-    width: 200px;
-    border: 1px solid #ec1c24;
   }
 
   main #about figure figcaption {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
 
-  main #about figure figcaption header h3,
-  main #skill .skill-wrapper .skill-list article header h3,
-  main #project article header h3 {
-    font-size: 28px;
-    font-weight: normal;
-    font-family: "open sans";
-    color: #5e080b;
-  }
-
-  main #about figure figcaption p,
-  main #project article .project-wrapper .project-container figcaption p {
+  main #about figure figcaption p {
+    font-family: Roboto;
     font-size: 14px;
-    line-height: 26px;
-    color: #5e080b;
-    font-family: "open sans";
+    line-height: 22px;
+    color: #f2f2f2;
   }
 
-  main #about figure figcaption a {
-    width: 112px;
-  }
+  /*End of about me page styling*/
 
-  main #home figure,
-  main #home figure img {
-    width: 384px;
-    animation: slidein 0.7s ease forwards;
-    animation-delay: 0.4s;
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  main #home article {
+  /*Start of contact page styling*/
+  main #contact {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 384px;
-    animation: appear 0.9s forwards;
-    animation-delay: 0.3;
-    opacity: 0;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
   }
 
-  main #home article header {
+  main #contact header {
     display: flex;
+    flex-direction: column;
+    gap: 11px;
+    justify-content: center;
+    align-self: flex-start;
   }
 
-  main #home article header h1 {
-    font-size: 36px;
-    font-family: "open sans";
-    color: #5e080b;
-    font-weight: normal;
-  }
-
-  main #home article header h1 span,
-  main #about figure figcaption header h3 span {
-    color: #ec1c24;
-    font-weight: bold;
-    font-family: Orbitron;
-  }
-
-  main #home article p {
-    font-size: 12px;
-    font-weight: normal;
-    font-family: "open sans";
-    color: #5e080b;
-  }
-
-  main #home article p span {
-    color: #ec1c24;
-  }
-
-  main #home article a,
-  main #about figure figcaption a {
-    background-color: #ec1c24;
+  main #contact header p {
+    color: #f2f2f2;
+    font-size: 14px;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #5e080b;
-    text-align: center;
-    color: #faf9f6;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: "open sans";
-    text-decoration: none;
-    width: 161px;
-    transition: all ease-in 0.7s;
+    font-family: Roboto;
+    line-height: 18px;
   }
+
+  main #contact form {
+    width: 500px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  main #contact form button {
+    align-self: flex-start;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background-color: #39ff14;
+    color: #000;
+    font-weight: 500;
+    font-family: Roboto;
+    font-size: 14px;
+    transition: all ease 0.5s;
+  }
+
+  main #contact form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  main #contact form div label {
+    padding: 10px;
+    font-family: "open sans";
+    font-size: 14px;
+    color: #1b1f38;
+    font-weight: 500;
+  }
+
+  main #contact form div input {
+    height: 38px;
+    border-radius: 3px;
+    border: 1px solid #000;
+  }
+
+  main #contact form div textarea {
+    height: 98px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    resize: none;
+  }
+  /*End of contact page styling*/
+
+  /*Start of footer*/
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+  }
+
+  footer nav {
+    width: 433px;
+  }
+
+  footer nav ul {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1b1f38;
+  }
+
+  footer nav ul li a {
+    color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: Roboto;
+    transition: all ease-in 0.3s;
+  }
+
+  footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 169px;
+  }
+
+  footer ul li i {
+    font-size: 18px;
+    color: #39ff14;
+    transition: all ease-in 0.3s;
+  }
+  /*End of footer*/
+
+  /*Start h2 styling*/
+  main #project header h2,
+  main #skill header h2,
+  main #about header h2,
+  main #contact header h2 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  /*End of h2 styling*/
 }
 
 @media only screen and (min-width: 1000px) {
+  /*Start of header*/
   .main-header nav button {
-    position: relative;
     display: none;
-    width: 42px;
-    height: 30px;
-    appearance: none;
-    background: none;
-    outline: none;
-    border: none;
-  }
-
-  .main-header nav {
-    width: 500px;
   }
 
   .main-header nav ul {
     position: relative;
-    right: 0;
     top: 0px;
-    width: 100%;
-    background-color: #fffff0;
-    display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    opacity: 1;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 1 !important;
   }
 
   .main-header nav ul li a {
-    color: #5e080b;
-    font-weight: normal;
-    transition: 0.5s ease-in;
+    transition: all 0.5s ease-in;
   }
+  /*End of header*/
 
+  /*Start of main styling*/
+  main {
+    min-height: calc(100vh - 125px);
+  }
+  /*End of main styling*/
+
+  /*Start of home page styling*/
   main #home figure,
   main #home figure img {
-    width: 500px;
-  }
-
-  main #home article {
-    width: 500px;
-  }
-
-  main #project article .project-wrapper .project-container {
-    gap: 10px;
-    width: 70%;
-  }
-
-  main #project article .project-wrapper .project-container figure {
-    width: 100%;
-    height: 220.78px;
-  }
-
-  main #skill .skill-wrapper figure,
-  main #skill .skill-wrapper figure img {
     width: 500px;
   }
 
@@ -1343,59 +1026,88 @@ footer {
     font-size: 40px;
   }
 
-  main #about header h2,
-  main #skill header h2,
-  main #project header h2,
-  main #contact header h2 {
-    font-size: 36px;
-  }
-
-  main #skill .skill-wrapper .skill-list article header h3,
-  main #project article header h3 {
-    font-size: 32px;
-  }
-
-  main
-    #project
-    article
-    .project-wrapper
-    .project-container
-    figcaption
-    header
-    h4 {
-    font-size: 28px;
-  }
-
   main #home article p {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  /*Start of home page styling*/
+
+  /*Start project page styling*/
+
+  main #project ul .traveler,
+  main #project ul .memory-game,
+  main #project ul .gamer,
+  main #project ul .canvascraft {
+    width: 322px;
+  }
+  main #project ul .taskly {
+    width: 306px;
   }
 
-  main #contact .contact-container .contact {
-    width: 500px;
+  main #project ul li figcaption p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  /*End project page styling*/
+
+  main #about figure figcaption p {
+    font-size: 16px;
   }
 
-  .main-header nav ul li a:hover,
-  main
-    #project
-    article
-    .project-wrapper
-    .project-container
-    figcaption
-    ul
-    li
-    a:hover,
+  /*End of about me page styling*/
+  /*Start of contact page styling*/
+  main #contact form {
+    width: 732px;
+  }
+
+  main #contact header p {
+    font-size: 16px;
+  }
+  /*End of contact page styling*/
+  /*Start of hover effects*/
+  .main-header nav ul li a:hover {
+    color: #39ff14;
+    font-weight: bold;
+  }
+
+  main #home article a:hover {
+    background-color: #6c63ff;
+    font-weight: bold;
+    color: #f2f2f2;
+  }
+
+  main #project ul li figcaption ul li:hover a i {
+    color: #f2f2f2;
+  }
+
+  main #project ul li figcaption ul li:hover a {
+    color: #39ff14;
+    font-weight: bold;
+  }
+
+  main #contact button:hover {
+    background-color: #6c63ff;
+    color: #f2f2f2;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
   footer nav ul li a:hover {
-    color: #f8aaad;
     font-weight: bold;
-    cursor: pointer;
+    color: #39ff14;
   }
 
-  main #home article a:hover,
-  main #about figure figcaption a:hover,
-  main #contact .contact-container .contact button:hover {
-    color: #5e080b;
-    font-weight: bold;
-    background-color: #f8aaad;
-    cursor: pointer;
+  footer ul li i:hover {
+    color: #f2f2f2;
   }
+  /*End of hover effects*/
+
+  /*Start h2 styling*/
+  main #project header h2,
+  main #skill header h2,
+  main #about header h2,
+  main #contact header h2 {
+    font-size: 31px;
+  }
+  /*End of h2 styling*/
 }
