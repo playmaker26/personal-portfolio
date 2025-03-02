@@ -1,50 +1,62 @@
-/*Start of navigation function*/
+/*toggle nav*/ 
 
-let toggleNav = function() {
-let burger = document.querySelector('.burger');
+function toggleNav() {
+    let burger = document.querySelector('.burger');
+    let ul = document.querySelector('.main-ul');
 
-burger.addEventListener('click', () => {
-  if(burger.classList.contains('active')) {
-    document.querySelector('.main-ul').style.opacity = 0;
-    burger.classList.remove('active');
-  }else {
-    document.querySelector('.main-ul').style.opacity = 1;
-    burger.classList.add('active');
-  }
-});
+    if(!burger || !ul) {
+        alert('No navigation found');
+        return;
+    }
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        ul.classList.toggle('active');
+    });
 }
 toggleNav();
 
-/*End of navigation function*/
+/*validate form*/
 
-/*Start of form validation*/
-let formValidation = function() {
-const button = document.querySelector('.send');
-const name = document.querySelector('#input-name');
-const email = document.querySelector('#input-email');
-const textarea = document.querySelector('#input-message');
+function formValidate() {
+    let form = document.querySelector('.form');
+    let nameLabel = document.querySelector('.label-name');
+    let inputName = document.querySelector('#input-name');
+    let emailLabel = document.querySelector('.label-email');
+    let inputEmail = document.querySelector('#input-email');
+    let messageLabel = document.querySelector('.label-message');
+    let textArea = document.querySelector('#message');
 
-button.addEventListener('click', (e) => {
-e.preventDefault();
+    form.addEventListener('submit', (e) => {
+      let isValid = true;
+        if(inputName.value.trim() === '') {
+            inputName.style.border = '1px solid red';
+            nameLabel.textContent = 'Type your name';
+            nameLabel.style.color = 'red';
+            isValid = false;
+        }
 
-if(name.value.trim() === '' || name.value.trim() === null) {
-  document.querySelector('.label-name').textContent = 'Type your name';
-  document.querySelector('.label-name').style.color = ' #FF0000';
-  name.style.border = '1px solid  #FF0000';
+        if(inputEmail.value.trim() === '') {
+            inputEmail.style.border = '1px solid red';
+            emailLabel.textContent = 'Type your E-mail';
+            emailLabel.style.color = 'red';
+            isValid = false;
+        }
+
+        if(textArea.value.trim() === '') {
+            textArea.style.border = '1px solid red';
+            messageLabel.textContent = 'Type your message';
+            messageLabel.style.color = 'red';
+            isValid = false;
+        }
+
+        if(isValid) {
+            form.submit();
+        }else {
+            e.preventDefault();
+        }
+    });
 }
+formValidate();
 
-if(email.value.trim() === '' || email.value.trim() === null){
-  document.querySelector('.label-email').textContent = 'Type your E-mail';
-  document.querySelector('.label-email').style.color = ' #FF0000';
-  email.style.border = '1px solid  #FF0000';
-}
 
-if(textarea.value.trim() === '' || textarea.value.trim() === null) {
-  document.querySelector('.label-message').textContent = 'Type your message';
-  document.querySelector('.label-message').style.color = ' #FF0000';
-  textarea.style.border = '1px solid  #FF0000';
-}
-});
-}
-formValidation();
-/*End of form validation*/ 

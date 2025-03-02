@@ -3,36 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <!--Google fonts-->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="font-6/css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <!--font awesome API-->
-    <link rel="stylesheet" href="font-6/css/all.css" />
-    <!--CSS reset-->
-    <link rel="stylesheet" href="css/reset.css" />
-    <!--CSS file-->
-    <link rel="stylesheet" href="css/style.css" />
-    <!--JavaScript file-->
-    <script defer src="js/script.js"></script>
-    <!--Favicon image-->
     <link rel="shortcut icon" href="favicon/favicon.png" type="image/x-icon" />
+    <script defer src="js/script.js"></script>
+    <title>Personal Portfolio</title>
   </head>
   <body>
-    <!--Start of header-->
-    <header class="main-header">
+    <header class="header">
       <div class="logo">
         <a href="index.html">Jorge Artaza</a>
       </div>
 
-      <nav class="main-nav">
+      <nav>
         <button class="burger">
           <span class="bar"></span>
         </button>
+
         <ul class="main-ul">
           <li><a href="#home">Home</a></li>
           <li><a href="#project">Projects</a></li>
@@ -42,237 +36,259 @@
         </ul>
       </nav>
     </header>
-    <!--End of header-->
-
-    <!--Start of main-->
     <main>
-      <!--Start of home section-->
       <section id="home">
         <figure>
-          <img src="img/home.gif" alt="" />
+          <img src="img/home.gif" alt="animation representation of me" />
         </figure>
         <article>
           <header>
-            <h1>Welcome to my portfolio</h1>
+            <h1>Hey their I am Jorge</h1>
           </header>
-          <p>
-            I'm a developer and gamer who creates unique web experiences.
-            Explore my projects and learn more about my journey.
-          </p>
-          <a href="#project">View Projects</a>
+          <p>I am a designer and developer by day and gamer by night.</p>
+          <a href="#project">View My Projects</a>
         </article>
       </section>
-      <!--End of home section-->
 
-      <!--Start project section-->
       <section id="project">
-        <header>
+        <header class="section-header">
           <h2>My Projects</h2>
         </header>
 
         <ul>
-          <li class="traveler">
-            <figure class="traveler-figure">
-              <!--project image added with CSS-->
+          <li>
+            <figure>
+              <img
+                src="project-images/traveler.svg"
+                alt="Person looking at the ocean"
+              />
             </figure>
             <figcaption>
-              <header><h3>Traveler</h3></header>
-              <p>
-                Traveler is a travel agency website which meets their clients
-                travel needs first. Book your next adventure with traveler and
-                explore the world.
-              </p>
+              <header>
+                <h3>Traveler</h3>
+              </header>
               <ul>
                 <li>
-                  <a href=""
-                    ><i class="fa-sharp fa-solid fa-earth-americas"></i>Live
-                    Demo</a
-                  >
+                  <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-github"></i>GitHub</a>
+                  <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-figma"></i>Figma</a>
+                  <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
                 </li>
               </ul>
             </figcaption>
           </li>
-
-          <li class="memory-game">
-            <figure class="memory-game-figure">
-              <!--project image added with CSS-->
+          <li>
+            <figure>
+              <img
+                src="project-images/memory-game.svg"
+                alt="A group solving a puzzle"
+              />
             </figure>
             <figcaption>
-              <header><h3>Memory Game</h3></header>
-              <p>
-                Test your memory with this game. Choose your difficulty and
-                match the pairs in the lowest amount of time possible.
-              </p>
+              <header>
+                <h3>Memory Game</h3>
+              </header>
               <ul>
                 <li>
-                  <a href=""
-                    ><i class="fa-sharp fa-solid fa-earth-americas"></i>Live
-                    Demo</a
-                  >
+                  <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-github"></i>GitHub</a>
+                  <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-figma"></i>Figma</a>
+                  <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
                 </li>
               </ul>
             </figcaption>
           </li>
-
-          <li class="taskly">
-            <figure class="taskly-figure">
-              <!--project image added with CSS-->
+          <li>
+            <figure>
+              <img
+                src="project-images/taskly.svg"
+                alt="A computer showing tasks"
+              />
             </figure>
             <figcaption>
-              <header><h3>Taskly</h3></header>
-              <p>
-                Let go of the worry of forgetting with Taskly. Let Taskly
-                remember your daily task. Create your task for the day and feel
-                a sense of completion at the end of the day.
-              </p>
+              <header>
+                <h3>Taskly</h3>
+              </header>
               <ul>
                 <li>
-                  <a href=""
-                    ><i class="fa-sharp fa-solid fa-earth-americas"></i>Live
-                    Demo</a
-                  >
+                  <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-github"></i>GitHub</a>
+                  <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-figma"></i>Figma</a>
+                  <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
                 </li>
               </ul>
             </figcaption>
           </li>
-
-          <li class="gamer">
-            <figure class="gamer-figure">
-              <!--project image added with CSS-->
+          <li>
+            <figure>
+              <img src="project-images/canvascraft.svg" alt="painting tools" />
             </figure>
             <figcaption>
-              <header><h3>100% Gamer</h3></header>
-              <p>
-                Reach 100% completion with 100% gamer. Type the game you are
-                playing and choose the level and start playing to 100%.
-              </p>
+              <header>
+                <h3>CanvasCraft</h3>
+              </header>
               <ul>
                 <li>
-                  <a href=""
-                    ><i class="fa-sharp fa-solid fa-earth-americas"></i>Live
-                    Demo</a
-                  >
+                  <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-github"></i>GitHub</a>
+                  <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-figma"></i>Figma</a>
+                  <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
                 </li>
               </ul>
             </figcaption>
           </li>
-
-          <li class="canvascraft">
-            <figure class="canvascraft-figure">
-              <!--project image added with CSS-->
+          <li>
+            <figure>
+              <img
+                src="project-images/gamer.svg"
+                alt="A gamer playing on the computer"
+              />
             </figure>
             <figcaption>
-              <header><h3>Canvascraft</h3></header>
-              <p>
-                Draw your next art design with Canvascraft. The application with
-                everything neeeded for any artiest.
-              </p>
+              <header>
+                <h3>100% Gamer</h3>
+              </header>
               <ul>
                 <li>
-                  <a href=""
-                    ><i class="fa-sharp fa-solid fa-earth-americas"></i>Live
-                    Demo</a
-                  >
+                  <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-github"></i>GitHub</a>
+                  <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
                 </li>
                 <li>
-                  <a href=""><i class="fa-brands fa-figma"></i>Figma</a>
+                  <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
+                </li>
+              </ul>
+            </figcaption>
+          </li>
+          <li>
+            <figure>
+              <img
+                src="project-images/blockbuster-brain.svg"
+                alt="A camera ready to film"
+              />
+            </figure>
+            <figcaption>
+              <header>
+                <h3>BlockBuster brain</h3>
+              </header>
+              <ul>
+                <li>
+                  <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
                 </li>
               </ul>
             </figcaption>
           </li>
         </ul>
       </section>
-      <!--End project section-->
+
       <section id="skill">
-        <header>
+        <header class="section-header">
           <h2>My Skills</h2>
         </header>
+
         <ul>
-          <li><i class="fa-brands fa-html5"></i>HTML</li>
-          <li><i class="fa-brands fa-css3-alt"></i>CSS</li>
-          <li><i class="fa-brands fa-js"></i>JavaScript</li>
-          <li><i class="fa-brands fa-figma"></i>Figma</li>
-          <li><i class="fa-brands fa-github"></i>GitHub</li>
+          <li>
+            <figure>
+              <i class="fa-brands fa-html5"></i>
+            </figure>
+            <figcaption>
+              <p>HTML</p>
+            </figcaption>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-brands fa-css3-alt"></i>
+            </figure>
+            <figcaption>
+              <p>CSS</p>
+            </figcaption>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-brands fa-js"></i>
+            </figure>
+            <figcaption>
+              <p>JavaScript</p>
+            </figcaption>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-brands fa-github"></i>
+            </figure>
+            <figcaption>
+              <p>GitHub</p>
+            </figcaption>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-brands fa-figma"></i>
+            </figure>
+            <figcaption>
+              <p>Figma</p>
+            </figcaption>
+          </li>
         </ul>
       </section>
       <section id="about">
-        <header>
+        <header class="section-header">
           <h2>About Me</h2>
         </header>
+
         <figure>
-          <img src="img/avatar.png" alt="Representation of myself" />
+          <img src="img/avatar.png" alt="a representation of me" />
           <figcaption>
             <p>
-              Thank you for scrolling this far! I'm excited to share more about
-              myself. My name is Jorge Artaza, a full-stack developer. I am here
-              to assist with all your programming needs, from design to coding.
-            </p>
-            <p>
-              When I am not coding, I enjoy working out, watching TV or movies,
-              or playing YU-GI-OH Duel Links. If you have any coding needs,
-              recommendations for TV shows or movie titles, or just want to
-              duel, please contact me.
+              Thanks for scrolling this far! When I'm not coding, you can find
+              me working out, watching TV or movies, or playing YU-GI-OH! Duel
+              Links. If you need a developer, have great show or movie
+              recommendations, know a new workout, or want to duel, feel free to
+              reach out!
             </p>
           </figcaption>
         </figure>
       </section>
+
       <section id="contact">
-        <header>
+        <header class="section-header">
           <h2>Contact Me</h2>
-          <p>
-            Have a question, recommendation, or just want to say hi? Feel free
-            to reach out using the form below!
-          </p>
         </header>
-        <form action="">
+
+        <form action="#" class="form">
           <div>
-            <label for="input-name" class="label-name">Your Name</label>
+            <label for="input-name" class="label-name">Name</label>
             <input type="text" id="input-name" />
           </div>
           <div>
-            <label for="input-email" class="label-email">Your Email</label>
+            <label for="input-email" class="label-email">E-mail</label>
             <input type="text" id="input-email" />
           </div>
           <div>
-            <label for="input-message" class="label-message"
-              >Your Message</label
-            >
-            <textarea name="" id="input-message"></textarea>
+            <label for="message" class="label-message">Message</label>
+            <textarea name="message" id="message"></textarea>
           </div>
-          <button type="submit" class="send">Send Message</button>
+          <button class="submit" type="submit">Send Message</button>
         </form>
       </section>
     </main>
-    <!--End of main-->
-
-    <!--Start of footer-->
     <footer>
       <nav>
         <ul>
@@ -283,12 +299,12 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
       <ul>
         <li><i class="fa-brands fa-square-facebook"></i></li>
-        <li><i class="fa-brands fa-square-twitter"></i></li>
         <li><i class="fa-brands fa-github"></i></li>
+        <li><i class="fa-brands fa-square-twitter"></i></li>
       </ul>
     </footer>
-    <!--End of footer-->
   </body>
 </html>

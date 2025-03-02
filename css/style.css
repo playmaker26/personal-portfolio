@@ -1,4 +1,13 @@
-/*Start of global styling*/
+:root {
+  --primary-color: #212121;
+  --secondary-color: #00fefc;
+  --accent-color: #bf00ff;
+  --text-color: #fff;
+  --padding: 8px;
+  --heading-font: Montserrat;
+  --text-font: Roboto;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,280 +17,281 @@ html {
 }
 
 body {
-  background-color: #1b1f38;
+  background-color: var(--primary-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 section {
   min-height: 100vh;
 }
 
-.main-header,
-.main-header .logo,
-.main-header .logo a,
-.main-header nav,
-.main-header nav ul,
-.main-header nav ul li,
-.main-header nav ul li a,
-main #home article header,
-main #home article p,
-main #home article a,
-main #project ul li figcaption p,
-main #project header,
-main #skill header,
-main #about header,
-main #contact header {
-  padding: 10px;
-}
-
-h1,
-h2,
-h3 {
-  color: #6c63ff;
-  font-family: "open sans";
-}
-
-main #home article header,
-main #skill header {
-  display: flex;
-  align-items: center;
-}
-
-main #project ul li figure {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-/*End of global styling*/
-
 @media only screen and (max-width: 767px) {
-  /*Start of header*/
-  .main-header {
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 328px;
+    margin: 0 auto;
+    background-color: var(--primary-color);
   }
 
-  .main-header .logo {
+  .header div {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: var(--padding);
   }
 
-  .main-header .logo a {
-    font-size: 18px;
-    color: #39ff14;
-    font-family: Roboto;
-    font-weight: 500;
+  .header div a {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-family: var(--text-font);
     text-decoration: none;
   }
 
-  .main-header nav {
+  .header nav {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .main-header nav button {
-    position: relative;
+  .header nav button {
     display: block;
-    width: 40px;
+    width: 38px;
     appearance: none;
     background: none;
     outline: none;
     border: none;
+    position: relative;
   }
 
-  .main-header nav button .bar,
-  .main-header nav button::after,
-  .main-header nav button::before {
+  .header nav button .bar,
+  .header nav button::after,
+  .header nav button::before {
     content: "";
     display: block;
     width: 100%;
-    height: 5px;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    height: 4px;
+    background-color: var(--text-color);
     margin: 4px 0px;
-    transition: all ease-out 0.6s;
+    transition: all ease-in-out 0.3s;
+    border-radius: 50px;
   }
 
-  .main-header nav button.active::before {
-    transform: rotate(-45deg) translate(-3px, 3px);
+  .header nav button.active::before {
+    transform: rotate(-45deg) translate(-6px, 5px);
   }
 
-  .main-header nav button.active::after {
-    transform: rotate(45deg) translate(-9px, -9px);
+  .header nav button.active::after {
+    transform: rotate(45deg) translate(-6px, -5px);
   }
 
-  .main-header nav button.active .bar {
+  .header nav button.active .bar {
     opacity: 0;
   }
 
-  .main-header nav ul {
+  .header nav ul.active {
+    opacity: 1;
+  }
+
+  .header nav ul {
+    opacity: 0;
     position: absolute;
-    right: 0;
-    background-color: #1b1f38;
-    top: 78px;
+    top: 32px;
+    margin: 0 auto;
+    gap: 16px;
+    transform: translate(-45%);
+    width: 328px;
+    z-index: 1;
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    gap: 10px;
-    z-index: 1;
     transition: all ease-in 0.3s;
-    opacity: 0;
   }
 
-  .main-header nav ul li {
-    margin: 0 0 10px 0;
+  .header nav ul li {
+    margin: 16px 0;
   }
 
-  .main-header nav ul li a {
-    text-align: center;
-    color: #f2f2f2;
-    font-weight: 400;
-    font-family: Roboto;
+  .header nav ul li a {
+    color: var(--text-color);
+    font-size: 0.8125rem;
+    font-family: var(--text-font);
     text-decoration: none;
   }
-  /*End of header*/
 
-  /*Start of main styling*/
   main {
-    min-height: calc(100vh - 138px);
+    width: 328px;
+    min-height: calc(100vh - 80px);
   }
-  /*End of main styling*/
 
-  /*Start of home page styling*/
   main #home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    width: 100%;
+    gap: 16px;
   }
 
   main #home figure,
   main #home figure img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
   main #home article {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  main #home article header {
+    display: flex;
+    justify-content: center;
+    padding: var(--padding);
   }
 
   main #home article header h1 {
-    font-size: 30px;
-    font-family: "open sans";
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--heading-font);
+    line-height: 48px;
   }
 
   main #home article p {
-    font-size: 14px;
-    line-height: 18px;
-    font-family: Roboto;
-    color: #f2f2f2;
+    font-size: 1rem;
+    padding: var(--padding);
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 24px;
   }
 
   main #home article a {
-    background-color: #39ff14;
+    font-size: 1rem;
+    padding: var(--padding);
+    font-family: var(--text-font);
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    align-self: flex-start;
+    font-weight: bold;
     text-decoration: none;
     text-align: center;
-    color: #000;
-    font-weight: 500;
-    font-family: Roboto;
-    font-size: 14px;
-    border-radius: 3px;
+  }
+
+  main #project,
+  main #skill,
+  main #about,
+  main #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  main #project .section-header,
+  main #skill .section-header,
+  main #about .section-header,
+  main #contact .section-header {
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
     align-self: flex-start;
   }
-  /*End of home page styling*/
 
-  /*Start project page styling*/
-  main #project {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 25px;
+  main #project header h2,
+  main #skill header h2,
+  main #about header h2,
+  main #contact header h2 {
+    font-size: 2.0625rem;
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    font-weight: bold;
   }
 
-  main #project ul {
+  main #project ul,
+  main #skill ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 25px;
+    background-color: var(--primary-color);
+    gap: 24px;
+    list-style: none;
   }
 
-  main #project ul li {
+  main #project ul li,
+  main #skill ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     width: 100%;
+    gap: 16px;
   }
 
-  main #project ul li .traveler-figure {
-    height: 220.78px;
-    background-image: url("../project-images/traveler.jpeg");
+  main #project ul li figure,
+  main #project ul li figure img,
+  main #skill ul li figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 309px;
   }
 
-  main #project ul li .memory-game-figure {
-    width: 249px;
-    height: 249px;
-    background-image: url("../project-images/memory-game.png");
-  }
-
-  main #project ul li .taskly-figure {
-    height: 177.12px;
-    background-image: url("../project-images/taskly.png");
-  }
-
-  main #project ul li .gamer-figure {
-    height: 205.71px;
-    background-image: url("../project-images/100-gamer.jpg");
-  }
-
-  main #project ul li .canvascraft-figure {
-    width: 250px;
-    height: 250px;
-    background-image: url("../project-images/canvascraft.png");
-  }
-
-  main #project ul li figcaption {
+  main #project ul li figcaption,
+  main #skill ul li figcaption {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 309px;
   }
 
   main #project ul li figcaption header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: var(--padding);
   }
 
   main #project ul li figcaption header h3 {
-    font-size: 24px;
-    font-weight: 500;
-  }
-
-  main #project ul li figcaption p {
-    font-size: 14px;
-    font-family: Roboto;
-    line-height: 18px;
-    color: #f2f2f2;
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.75rem;
+    text-align: center;
   }
 
   main #project ul li figcaption ul {
     display: flex;
     flex-direction: row;
+    width: 309px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    width: 100%;
+    gap: 25px;
+  }
+
+  main #project ul li figcaption ul li {
+    width: 86.33px;
   }
 
   main #project ul li figcaption ul li a {
@@ -289,64 +299,35 @@ main #project ul li figure {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: var(--text-font);
     text-decoration: none;
-    color: #f2f2f2;
-    font-size: 12px;
-    font-weight: 500;
-    font-family: Roboto;
+    font-size: 0.6875rem;
   }
 
   main #project ul li figcaption ul li a i {
-    color: #39ff14;
-    font-size: 18px;
-  }
-  /*End project page styling*/
-
-  /*Start of skills page styling*/
-  main #skill {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    font-size: 1.5625rem;
+    color: var(--accent-color);
   }
 
+  main #project ul,
   main #skill ul {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+    align-self: flex-start;
   }
 
-  main #skill ul li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  main #skill ul li figure i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+  }
+
+  main #skill ul li figcaption p {
+    font-size: 1rem;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    font-weight: bold;
     text-align: center;
-    color: #6c63ff;
-    font-family: "open sans";
-    font-weight: 500;
-    font-size: 24px;
-  }
-
-  main #skill ul li i {
-    font-size: 80px;
-    color: #f2f2f2;
-  }
-
-  /*Start of about me page styling*/
-  main #about {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  main #about header {
-    display: flex;
-    align-items: center;
   }
 
   main #about figure {
@@ -354,324 +335,318 @@ main #project ul li figure {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     width: 100%;
   }
 
   main #about figure img {
-    width: 220px;
+    width: 247px;
     border-radius: 50%;
   }
 
   main #about figure figcaption {
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    padding: var(--padding);
   }
 
   main #about figure figcaption p {
-    font-family: Roboto;
-    font-size: 14px;
-    line-height: 22px;
-    color: #f2f2f2;
-  }
-
-  /*End of about me page styling*/
-
-  /*Start of contact page styling*/
-  main #contact {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  main #contact header {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    justify-content: center;
-    align-self: flex-start;
-  }
-
-  main #contact header p {
-    color: #f2f2f2;
-    font-size: 14px;
-    padding: 10px;
-    font-family: Roboto;
-    line-height: 18px;
+    font-size: 1rem;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 24px;
+    padding: var(--padding);
   }
 
   main #contact form {
-    width: 100%;
-    background-color: #fff;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 25px;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--text-color);
+    gap: 16px;
   }
 
   main #contact form button {
     align-self: flex-start;
-    padding: 10px;
-    border-radius: 3px;
+    text-align: center;
+    color: var(--text-color);
+    font-family: var(--text-font);
+    background-color: var(--accent-color);
+    padding: var(--padding);
+    font-family: 1rem;
+    font-weight: bold;
     border: 1px solid #000;
-    background-color: #39ff14;
-    color: #000;
-    font-weight: 500;
-    font-family: Roboto;
-    font-size: 14px;
   }
 
   main #contact form div {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    width: 100%;
+    gap: 8px;
   }
 
-  main #contact form div label {
-    padding: 10px;
-    font-family: "open sans";
-    font-size: 14px;
-    color: #1b1f38;
-    font-weight: 500;
-  }
-
-  main #contact form div input {
-    height: 38px;
-    border-radius: 3px;
-    border: 1px solid #000;
-  }
-
+  main #contact form div input,
   main #contact form div textarea {
-    height: 98px;
-    border-radius: 3px;
-    border: 1px solid #000;
+    width: 100%;
+    padding: var(--padding);
     resize: none;
   }
-  /*End of contact page styling*/
 
-  /*Start of footer*/
   footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px;
-    width: 100%;
+    gap: 16px;
+    width: 328px;
+    margin: 0 auto;
+    background-color: var(--primary-color);
   }
 
   footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
   footer nav ul {
     display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    background-color: #1b1f38;
+    width: 100%;
+    gap: 16px;
   }
 
   footer nav ul li a {
-    color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 400;
+    color: var(--text-color);
+    font-size: 0.6875rem;
+    font-family: var(--text-font);
     text-decoration: none;
-    font-family: Roboto;
   }
 
   footer ul {
-    list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    width: 261px;
+    gap: 8px;
+    width: 100%;
+    list-style: none;
   }
 
   footer ul li i {
-    font-size: 18px;
-    color: #39ff14;
+    font-size: 0.6875rem;
+    color: var(--accent-color);
   }
-  /*End of footer*/
-
-  /*Start h2 styling*/
-  main #project header h2,
-  main #skill header h2,
-  main #about header h2,
-  main #contact header h2 {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  /*End of h2 styling*/
 }
 
 @media only screen and (min-width: 768px) {
-  /*Start of header*/
-  .main-header {
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 704px;
+    margin: 0 auto;
+    background-color: var(--primary-color);
   }
 
-  .main-header .logo {
+  .header div {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: var(--padding);
   }
 
-  .main-header .logo a {
-    font-size: 18px;
-    color: #39ff14;
-    font-family: Roboto;
-    font-weight: 500;
+  .header div a {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-family: var(--text-font);
     text-decoration: none;
   }
 
-  .main-header nav {
+  .header nav {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .main-header nav button {
-    position: relative;
+  .header nav button {
     display: block;
-    width: 40px;
+    width: 38px;
     appearance: none;
     background: none;
     outline: none;
     border: none;
+    position: relative;
   }
 
-  .main-header nav button .bar,
-  .main-header nav button::after,
-  .main-header nav button::before {
+  .header nav button .bar,
+  .header nav button::after,
+  .header nav button::before {
     content: "";
     display: block;
     width: 100%;
-    height: 5px;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    height: 4px;
+    background-color: var(--text-color);
     margin: 4px 0px;
-    transition: all ease-out 0.6s;
+    transition: all ease-in-out 0.3s;
+    border-radius: 50px;
   }
 
-  .main-header nav button.active::before {
-    transform: rotate(-45deg) translate(-3px, 3px);
+  .header nav button.active::before {
+    transform: rotate(-45deg) translate(-6px, 5px);
   }
 
-  .main-header nav button.active::after {
-    transform: rotate(45deg) translate(-9px, -9px);
+  .header nav button.active::after {
+    transform: rotate(45deg) translate(-6px, -5px);
   }
 
-  .main-header nav button.active .bar {
+  .header nav button.active .bar {
     opacity: 0;
   }
 
-  .main-header nav ul {
+  .header nav ul.active {
+    opacity: 1;
+  }
+
+  .header nav ul {
+    opacity: 0;
     position: absolute;
-    right: 0;
-    background-color: #1b1f38;
-    top: 78px;
+    top: 32px;
+    margin: 0 auto;
+    gap: 16px;
+    transform: translate(-45%);
+    width: 704px;
+    z-index: 1;
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    gap: 10px;
-    z-index: 1;
     transition: all ease-in 0.3s;
-    opacity: 0;
   }
 
-  .main-header nav ul li {
-    margin: 0 0 10px 0;
+  .header nav ul li {
+    margin: 16px 0;
   }
 
-  .main-header nav ul li a {
-    text-align: center;
-    color: #f2f2f2;
-    font-weight: 400;
-    font-family: Roboto;
+  .header nav ul li a {
+    color: var(--text-color);
+    font-size: 0.8125rem;
+    font-family: var(--text-font);
     text-decoration: none;
+    transition: all ease-in 0.3s;
   }
-  /*End of header*/
 
-  /*Start of main styling*/
   main {
-    min-height: calc(100vh - 97px);
+    width: 704px;
+    min-height: calc(100vh - 48px);
   }
-  /*End of main styling*/
 
-  /*Start of home page styling*/
   main #home {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 25px;
+    width: 100%;
+    gap: 16px;
   }
 
   main #home figure,
   main #home figure img {
-    width: 382px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 344px;
   }
 
   main #home article {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
+    width: 344px;
+  }
+
+  main #home article header {
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
   }
 
   main #home article header h1 {
-    font-size: 30px;
-    font-family: "open sans";
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--heading-font);
+    line-height: 48px;
   }
 
   main #home article p {
-    font-size: 14px;
-    line-height: 18px;
-    font-family: Roboto;
-    color: #f2f2f2;
+    font-size: 1rem;
+    padding: var(--padding);
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 24px;
   }
 
   main #home article a {
-    background-color: #39ff14;
+    font-size: 1rem;
+    padding: var(--padding);
+    font-family: var(--text-font);
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    align-self: flex-start;
+    font-weight: bold;
     text-decoration: none;
     text-align: center;
-    color: #000;
-    font-weight: 500;
-    font-family: Roboto;
-    font-size: 14px;
-    border-radius: 3px;
-    align-self: flex-start;
-    transition: all ease-in 0.5s;
+    transition: all ease-in 0.3s;
   }
-  /*End of home page styling*/
 
-  /*Start project page styling*/
-  main #project {
+  main #project,
+  main #skill,
+  main #about,
+  main #contact {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 25px;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  main #project .section-header,
+  main #skill .section-header,
+  main #about .section-header,
+  main #contact .section-header {
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+  }
+
+  main #project header h2,
+  main #skill header h2,
+  main #about header h2,
+  main #contact header h2 {
+    font-size: 2.5rem;
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    font-weight: bold;
   }
 
   main #project ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-content: center;
     width: 100%;
-    gap: 25px;
+    background-color: var(--primary-color);
+    gap: 24px;
+    list-style: none;
   }
 
   main #project ul li {
@@ -679,80 +654,53 @@ main #project ul li figure {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     width: 100%;
+    gap: 16px;
   }
 
-  main #project ul .traveler,
-  main #project ul .taskly,
-  main #project ul .canvascraft {
-    width: 317px;
-  }
-
-  main #project ul .memory-game,
-  main #project ul .gamer {
-    width: 425px;
-  }
-
-  main #project ul li .traveler-figure {
-    height: 220.78px;
-    background-image: url("../project-images/traveler.jpeg");
-  }
-
-  main #project ul li .memory-game-figure {
-    width: 249px;
-    height: 249px;
-    background-image: url("../project-images/memory-game.png");
-  }
-
-  main #project ul li .taskly-figure {
-    height: 177.12px;
-    background-image: url("../project-images/taskly.png");
-  }
-
-  main #project ul li .gamer-figure {
-    height: 205.71px;
-    background-image: url("../project-images/100-gamer.jpg");
-  }
-
-  main #project ul li .canvascraft-figure {
-    width: 250px;
-    height: 250px;
-    background-image: url("../project-images/canvascraft.png");
+  main #project ul li figure,
+  main #project ul li figure img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 309px;
   }
 
   main #project ul li figcaption {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 309px;
   }
 
   main #project ul li figcaption header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: var(--padding);
   }
 
   main #project ul li figcaption header h3 {
-    font-size: 24px;
-    font-weight: 500;
-  }
-
-  main #project ul li figcaption p {
-    font-size: 14px;
-    font-family: Roboto;
-    line-height: 18px;
-    color: #f2f2f2;
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 2.0625rem;
+    text-align: center;
   }
 
   main #project ul li figcaption ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    width: 309px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    width: 100%;
+    gap: 25px;
+  }
+
+  main #project ul li figcaption ul li {
+    width: 86.33px;
   }
 
   main #project ul li figcaption ul li a {
@@ -760,67 +708,65 @@ main #project ul li figure {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: var(--text-font);
     text-decoration: none;
-    color: #f2f2f2;
-    font-size: 12px;
-    font-weight: 500;
-    font-family: Roboto;
-    transition: all ease-in 0.8s;
+    font-size: 0.6875rem;
+    transition: all ease-in 0.3s;
   }
 
   main #project ul li figcaption ul li a i {
-    color: #39ff14;
-    font-size: 18px;
+    font-size: 1.5625rem;
+    color: var(--accent-color);
     transition: all ease-in 0.3s;
   }
-  /*End project page styling*/
 
-  /*Start of skills page styling*/
-  main #skill {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  main #project ul,
+  main #skill ul {
+    align-self: flex-start;
   }
 
   main #skill ul {
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 25px;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 16px;
+    width: 100%;
   }
 
   main #skill ul li {
     display: flex;
     flex-direction: column;
+    gap: 8px;
+    width: 128px;
+  }
+
+  main #skill ul li figure {
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    text-align: center;
-    color: #6c63ff;
-    font-family: "open sans";
-    font-weight: 500;
-    font-size: 24px;
-  }
-
-  main #skill ul li i {
-    font-size: 80px;
-    color: #f2f2f2;
-  }
-  /*End of skills page styling*/
-
-  /*Start of about me page styling*/
-  main #about {
-    display: flex;
     flex-direction: column;
-    gap: 25px;
   }
 
-  main #about header {
+  main #skill ul li figure i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+  }
+
+  main #skill ul li figure figcaption {
     display: flex;
+    justify-content: center;
     align-items: center;
+  }
+
+  main #skill ul li figcaption p {
+    font-size: 1rem;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
   }
 
   main #about figure {
@@ -828,286 +774,181 @@ main #project ul li figure {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     width: 100%;
   }
 
   main #about figure img {
-    width: 220px;
+    width: 247px;
     border-radius: 50%;
   }
 
   main #about figure figcaption {
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    width: 425px;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    padding: var(--padding);
   }
 
   main #about figure figcaption p {
-    font-family: Roboto;
-    font-size: 14px;
-    line-height: 22px;
-    color: #f2f2f2;
-  }
-
-  /*End of about me page styling*/
-
-  /*Start of contact page styling*/
-  main #contact {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  main #contact header {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    justify-content: center;
-    align-self: flex-start;
-  }
-
-  main #contact header p {
-    color: #f2f2f2;
-    font-size: 14px;
-    padding: 10px;
-    font-family: Roboto;
-    line-height: 18px;
+    font-size: 1rem;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 24px;
+    padding: var(--padding);
   }
 
   main #contact form {
-    width: 500px;
-    background-color: #fff;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 25px;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--text-color);
+    gap: 16px;
   }
 
   main #contact form button {
     align-self: flex-start;
-    padding: 10px;
-    border-radius: 3px;
+    text-align: center;
+    color: var(--text-color);
+    font-family: var(--text-font);
+    background-color: var(--accent-color);
+    padding: var(--padding);
+    font-family: 1rem;
+    font-weight: bold;
     border: 1px solid #000;
-    background-color: #39ff14;
-    color: #000;
-    font-weight: 500;
-    font-family: Roboto;
-    font-size: 14px;
-    transition: all ease 0.5s;
+    transition: all ease-in 0.3s;
   }
 
   main #contact form div {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    width: 100%;
+    gap: 8px;
   }
 
-  main #contact form div label {
-    padding: 10px;
-    font-family: "open sans";
-    font-size: 14px;
-    color: #1b1f38;
-    font-weight: 500;
-  }
-
-  main #contact form div input {
-    height: 38px;
-    border-radius: 3px;
-    border: 1px solid #000;
-  }
-
+  main #contact form div input,
   main #contact form div textarea {
-    height: 98px;
-    border-radius: 3px;
-    border: 1px solid #000;
+    width: 100%;
+    padding: var(--padding);
     resize: none;
   }
-  /*End of contact page styling*/
 
-  /*Start of footer*/
   footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    width: 100%;
+    gap: 16px;
+    width: 704px;
+    margin: 0 auto;
+    background-color: var(--primary-color);
   }
 
   footer nav {
-    width: 433px;
+    display: flex;
+    align-items: center;
+    width: 299px;
   }
 
   footer nav ul {
     display: flex;
-    gap: 10px;
-    width: 100%;
-    justify-content: space-evenly;
     align-items: center;
-    background-color: #1b1f38;
+    width: 100%;
+    gap: 16px;
   }
 
   footer nav ul li a {
-    color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 400;
+    color: var(--text-color);
+    font-size: 0.6875rem;
+    font-family: var(--text-font);
     text-decoration: none;
-    font-family: Roboto;
     transition: all ease-in 0.3s;
   }
 
   footer ul {
-    list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    width: 169px;
+    gap: 8px;
+    width: 189px;
+    list-style: none;
   }
 
   footer ul li i {
-    font-size: 18px;
-    color: #39ff14;
+    font-size: 0.6875rem;
+    color: var(--accent-color);
     transition: all ease-in 0.3s;
   }
-  /*End of footer*/
-
-  /*Start h2 styling*/
-  main #project header h2,
-  main #skill header h2,
-  main #about header h2,
-  main #contact header h2 {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  /*End of h2 styling*/
 }
 
 @media only screen and (min-width: 1000px) {
-  /*Start of header*/
-  .main-header nav button {
+  .header {
+    width: 680px;
+  }
+
+  .header nav button {
     display: none;
   }
 
-  .main-header nav ul {
+  .header nav {
+    width: 319px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header nav ul {
+    opacity: 1;
     position: relative;
     top: 0px;
-    flex-direction: row;
-    justify-content: space-between;
+    transform: translate(0);
     width: 100%;
-    opacity: 1 !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
-  .main-header nav ul li a {
-    transition: all 0.5s ease-in;
+  .header nav ul li a:hover,
+  footer nav ul li a:hover {
+    color: var(--accent-color);
+    font-weight: bold;
   }
-  /*End of header*/
 
-  /*Start of main styling*/
   main {
-    min-height: calc(100vh - 125px);
+    width: 680px;
+    min-height: calc(100vh - 64px);
   }
-  /*End of main styling*/
 
-  /*Start of home page styling*/
   main #home figure,
   main #home figure img {
-    width: 500px;
+    width: 332px;
   }
 
-  main #home article header h1 {
-    font-size: 40px;
+  main #home article {
+    width: 332px;
   }
 
-  main #home article p {
-    font-size: 16px;
-    line-height: 22px;
-  }
-  /*Start of home page styling*/
-
-  /*Start project page styling*/
-
-  main #project ul .traveler,
-  main #project ul .memory-game,
-  main #project ul .gamer,
-  main #project ul .canvascraft {
-    width: 322px;
-  }
-  main #project ul .taskly {
-    width: 306px;
-  }
-
-  main #project ul li figcaption p {
-    font-size: 16px;
-    line-height: 22px;
-  }
-  /*End project page styling*/
-
-  main #about figure figcaption p {
-    font-size: 16px;
-  }
-
-  /*End of about me page styling*/
-  /*Start of contact page styling*/
-  main #contact form {
-    width: 732px;
-  }
-
-  main #contact header p {
-    font-size: 16px;
-  }
-  /*End of contact page styling*/
-  /*Start of hover effects*/
-  .main-header nav ul li a:hover {
-    color: #39ff14;
-    font-weight: bold;
-  }
-
-  main #home article a:hover {
-    background-color: #6c63ff;
-    font-weight: bold;
-    color: #f2f2f2;
-  }
-
-  main #project ul li figcaption ul li:hover a i {
-    color: #f2f2f2;
+  main #home article a:hover,
+  main #contact form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
   }
 
   main #project ul li figcaption ul li:hover a {
-    color: #39ff14;
-    font-weight: bold;
+    color: var(--accent-color);
   }
 
-  main #contact button:hover {
-    background-color: #6c63ff;
-    color: #f2f2f2;
-    font-weight: bold;
-    cursor: pointer;
+  main #project ul li figcaption ul li:hover a i {
+    color: var(--text-color);
   }
 
-  footer nav ul li a:hover {
-    font-weight: bold;
-    color: #39ff14;
+  footer {
+    width: 680px;
   }
 
   footer ul li i:hover {
-    color: #f2f2f2;
+    color: var(--text-color);
   }
-  /*End of hover effects*/
-
-  /*Start h2 styling*/
-  main #project header h2,
-  main #skill header h2,
-  main #about header h2,
-  main #contact header h2 {
-    font-size: 31px;
-  }
-  /*End of h2 styling*/
 }
