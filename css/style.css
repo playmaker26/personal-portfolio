@@ -1,26 +1,32 @@
 :root {
-  --bg-color: #fdf6ff;
-  --button-color: #0000ff;
-  --hover-color: #9a89b4;
-  --text-color: #1e1926;
-  --button-padding: 0.75rem;
+  --primary-color: #003140;
+  --secondary-color: #ffff00;
+  --accent-color: #00bce8;
+  --hover-color: #40d9ff;
+  --text-color: #fff;
+  --header-font: "Playfair Display";
+  --text-font: Lato;
   --padding: 0.5rem;
-  --header-font: Roboto;
-  --text-font: Raleway;
-  --h1-font-size: 3rem;
-  --h2-font-size: 2.5rem;
-  --h3-font-size: 2.0625rem;
-  --h4-font-size: 1.75rem;
-  --text-size: 1rem;
-  --link-size: 0.8125rem;
-  --footer-text: 0.6875rem;
+  --h1-font-size: 3.8125rem;
+  --h2-font-size: 3rem;
+  --h3-font-size: 2.4375rem;
+  --h4-font-size: 1.9375rem;
+  --nav-link-font-size: 0.8125rem;
+  --paragraph-font-size: 1rem;
+  --icons-font-size: 1.5625rem;
+  --footer-font-size: 0.625rem;
+  --gap-section: 4.0625rem;
+  --gap-between-items: 2rem;
   --extra-bold: 800;
-  --bold: 700;
-  --semibold: 600;
   --medium: 500;
+  --semi-bold: 600;
+  --regular: 400;
+  --bold: 700;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -29,842 +35,930 @@ html {
 }
 
 body {
-  background-color: var(--bg-color);
-}
-
-.wrapper {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-main {
-  width: 100%;
+  background-color: var(--primary-color);
 }
 
 section {
   min-height: 100vh;
 }
 
-footer {
-  width: 100%;
-  background-color: var(--text-color);
-  padding: var(--padding);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: var(--padding);
+a {
+  text-decoration: none;
 }
 
-footer p {
-  text-align: center;
-  font-size: var(--footer-text);
-  padding: var(--padding);
-  color: var(--bg-color);
-  font-weight: var(--bold);
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
 }
 
 main {
-  min-height: calc(100vh -91px);
+  margin: 65px 0;
 }
 
-@media only screen and (max-width: 743px) {
-  .wrapper {
-    max-width: 288px;
-  }
-
-  .main-header {
-    background-color: var(--text-color);
+@media only screen and (max-width: 767px) {
+  .index-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding);
+    background-color: var(--primary-color);
   }
 
-  .main-header .logo {
+  .index-header .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: var(--padding);
   }
 
-  .main-header .logo a {
-    font-size: var(--text-size);
+  .index-header .logo a {
     font-family: var(--text-font);
-    color: var(--bg-color);
-    font-weight: var(--bold);
-    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: var(--medium);
+    font-size: var(--paragraph-font-size);
   }
 
-  .main-header nav ul {
+  .index-header nav {
+    width: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--text-size);
-    position: absolute;
-    right: 0px;
-    width: 68px;
+  }
+
+  .index-header nav input[type="checkbox"] {
+    display: none;
+  }
+
+  .index-header nav .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .index-header nav .burger .bar {
+    width: 100%;
     background-color: var(--text-color);
-    top: 48px;
-    z-index: 1;
+    border-radius: 50px;
+    height: 4px;
   }
 
-  .main-header nav ul li a {
-    padding: var(--padding);
-    color: var(--bg-color);
-    font-weight: var(--semibold);
-    font-size: var(--link-size);
-    text-decoration: none;
-    text-align: center;
-  }
-
-  #home,
-  #project,
-  #about,
-  #skill,
-  #contact {
+  .index-header nav ul {
+    position: absolute;
+    top: 32px;
+    right: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--text-size);
+    gap: 36px;
+    z-index: 1;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: all ease-in 0.3s;
   }
 
-  #home figure {
-    background-image: url(../img/avatar.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 241px;
-    height: 241px;
-    border-radius: 50%;
+  .index-header nav ul li a {
+    padding: var(--padding);
+    color: var(--text-color);
+    font-weight: var(--medium);
+    font-size: var(--nav-link-font-size);
+    font-family: var(--text-font);
   }
 
-  #home article,
-  #contact .contact-wrapper article {
+  .index-header nav #toggle:checked ~ ul {
+    opacity: 1;
+  }
+
+  main {
+    min-height: calc(100vh - 88px);
+  }
+
+  main #home {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  main #home figure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #home article {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--text-size);
+    gap: 0.5rem;
   }
 
-  #home article h1 {
+  main #home article h1 {
+    font-size: var(--h2-font-size);
     color: var(--text-color);
     font-family: var(--header-font);
-    font-size: var(--h2-font-size);
     padding: var(--padding);
+    font-weight: var(--extra-bold);
   }
 
-  #home article p,
-  #about figure figcaption p,
-  #contact .contact-wrapper article p {
-    font-size: var(--text-size);
+  main #home article h1 span {
+    color: var(--secondary-color);
+  }
+
+  main #home article p {
+    color: var(--text-color);
     font-family: var(--text-font);
-    line-height: 24px;
+    font-size: var(--paragraph-font-size);
     padding: var(--padding);
   }
 
-  #home article a {
-    padding: var(--button-padding);
-    text-align: center;
-    font-size: var(--text-size);
-    color: var(--bg-color);
-    text-decoration: none;
-    font-weight: var(--bold);
-    background-color: var(--button-color);
-    align-self: flex-start;
-    width: 164px;
+  main #home article p span {
+    color: var(--secondary-color);
   }
 
-  #project header,
-  #about header,
-  #skill header,
-  #contact header {
+  main #home article p span::before {
+    content: "Developer";
+    animation: typing 15s infinite;
+  }
+
+  @keyframes typing {
+    0% {
+      content: "Developer";
+    }
+
+    100% {
+      content: "Designer";
+    }
+  }
+
+  main #home article a,
+  main #contact div form button {
+    padding: var(--padding);
+    background-color: var(--accent-color);
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: var(--bold);
+    font-size: var(--paragraph-font-size);
+    font-family: var(--text-font);
     align-self: flex-start;
+  }
+
+  main #project,
+  main #about,
+  main #skill,
+  main #contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-section);
+  }
+
+  main #project .project-header,
+  main #about .about-header,
+  main #skill .skill-header,
+  main #contact .contact-header {
     display: flex;
     align-items: center;
-    padding: var(--padding);
   }
 
-  #project header h2,
-  #about header h2,
-  #skill header h2,
-  #contact header h2 {
+  main #project .project-header h2,
+  main #about .about-header h2,
+  main #skill .skill-header h2,
+  main #contact .contact-header h2 {
+    color: var(--secondary-color);
     font-family: var(--header-font);
     font-size: var(--h3-font-size);
-    color: var(--text-color);
   }
 
-  #project .project-gallery,
-  #skill .skill-collection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-    width: 100%;
-    list-style: none;
-  }
-
-  #project .project-gallery li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #project .project-gallery li figure,
-  #project .project-gallery li figure img {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #project .project-gallery li figure figcaption {
+  main #project .project-ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: var(--text-size);
+    gap: var(--gap-between-items);
   }
 
-  #project .project-gallery li figure figcaption .project-name {
+  main #project .project-ul li figure {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: var(--text-color);
+    gap: 24px;
+  }
+
+  main #project .project-ul li figure figcaption,
+  main #skill .skill-ul li figure figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  main #project .project-ul li figure figcaption header,
+  main #skill .skill-ul li figure figcaption header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: var(--padding);
+    gap: var(--padding);
   }
 
-  #project .project-gallery li figure figcaption .project-name h3 {
-    font-size: var(--h4-font-size);
-    color: var(--text-color);
+  main #project .project-ul li figure figcaption header h3,
+  main #skill .skill-ul li figure figcaption header h3 {
+    color: var(--primary-color);
     font-family: var(--header-font);
+    font-size: var(--h4-font-size);
+    font-weight: var(--bold);
     text-align: center;
   }
 
-  #project .project-gallery li figure figcaption .cta-project {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #project .project-gallery li figure figcaption .cta-project li a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--padding);
-    font-size: var(--link-size);
-    font-weight: var(--medium);
-    text-align: center;
+  main #project .project-ul li figure figcaption p,
+  main #skill .skill-ul li figure figcaption p {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    color: var(--primary-color);
     padding: var(--padding);
-    text-decoration: none;
-    color: var(--text-color);
+    line-height: 1.25rem;
   }
 
-  #project .project-gallery li figure figcaption .cta-project li a i {
-    font-size: 25px;
-    color: var(--button-color);
-  }
-
-  #about figure,
-  #skill .skill-collection li figure {
+  main #project .project-ul li figure figcaption ul {
     display: flex;
-    flex-direction: column;
+    gap: 1.625rem;
     justify-content: center;
     align-items: center;
-    gap: var(--text-size);
     width: 100%;
   }
 
-  #about figure img {
+  main #project .project-ul li figure figcaption ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--paragraph-font-size);
+    padding: var(--padding);
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    font-family: var(--text-font);
+    color: var(--primary-color);
+  }
+
+  main #project .project-ul li figure figcaption ul li a i {
+    font-size: var(--icons-font-size);
+    color: var(--accent-color);
+  }
+
+  main #about figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.25rem;
+    width: 100%;
+  }
+
+  main #about figure img {
     border-radius: 50%;
-    width: 241px;
+    width: 300px;
   }
 
-  #about figure figcaption,
-  #skill .skill-collection li figure figcaption {
+  main #about figure figcaption,
+  main #skill .skill-ul li figure {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
-    gap: var(--text-size);
+    gap: 8px;
   }
 
-  #skill .skill-collection li figure figcaption p {
-    padding: var(--padding);
-    text-align: center;
+  main #about figure figcaption p {
+    font-size: var(--paragraph-font-size);
     color: var(--text-color);
-    font-size: var(--text-size);
-    font-family: var(--text-font);
-    font-weight: var(--medium);
-  }
-
-  #skill .skill-collection li figure i {
-    font-size: 40px;
-    color: var(--button-color);
-  }
-
-  #contact .contact-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #contact .contact-wrapper article ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-  }
-
-  #contact .contact-wrapper article ul li a {
-    color: var(--button-color);
-    font-size: 25px;
-    text-decoration: none;
-  }
-
-  #contact .contact-wrapper form {
-    width: 100%;
-    background-color: inherit;
-    display: flex;
-    flex-direction: column;
-    gap: var(--text-size);
-    border: 1px solid var(--text-color);
-  }
-
-  #contact .contact-wrapper form div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: var(--padding);
+    line-height: 1.5rem;
+  }
+
+  main #skill .skill-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-between-items);
+    width: 100%;
+  }
+
+  main #skill .skill-ul li figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-color);
+    gap: var(--paragraph-font-size);
+    width: 100%;
+  }
+
+  main #skill .skill-ul li figure i {
+    font-size: 3.75rem;
+    color: var(--accent-color);
+  }
+
+  main #contact div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap-between-items);
+  }
+
+  main #contact div article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--paragraph-font-size);
+  }
+
+  main #contact div article p {
+    color: var(--text-color);
+    font-family: var(--text-font);
+    padding: var(--padding);
+    font-size: var(--paragraph-font-size);
+  }
+
+  main #contact div article ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  main #contact div article ul li a {
+    font-size: var(--icons-font-size);
+    color: var(--accent-color);
+  }
+
+  main #contact div form {
+    width: 100%;
+    background-color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--paragraph-font-size);
+  }
+
+  main #contact div form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: var(--padding);
   }
 
-  #contact .contact-wrapper form div label {
-    font-size: var(--link-size);
-    color: var(--text-color);
-    font-family: var(--text-font);
+  main #contact div form div label {
+    font-size: var(--paragraph-font-size);
     font-weight: var(--medium);
+    color: var(--primary-color);
+    font-family: var(--text-font);
   }
 
-  #contact .contact-wrapper form div input {
-    padding: var(--padding);
-    width: 100%;
+  main #contact div form div input {
+    padding: 4px;
+    border-radius: 3px;
+    border: 1px solid var(--primary-color);
   }
 
-  #contact .contact-wrapper form div textarea {
-    padding: var(--padding);
-    width: 100%;
-    min-height: 125px;
+  main #contact div form div textarea {
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid var(--primary-color);
     resize: none;
   }
 
-  #contact .contact-wrapper form button {
-    background-color: var(--button-color);
-    padding: var(--button-padding);
-    text-align: center;
-    color: var(--bg-color);
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding);
+    gap: var(--padding);
+    background-color: var(--accent-color);
+  }
+
+  footer nav {
+    width: 100%;
+  }
+
+  footer nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--paragraph-font-size);
+  }
+
+  footer nav ul li a {
+    padding: var(--padding);
+    font-size: 0.625rem;
+    font-weight: var(--medium);
+    color: var(--primary-color);
     font-family: var(--text-font);
-    font-weight: var(--bold);
-    border: none;
-    appearance: none;
-    outline: none;
-    width: 138px;
-    align-self: flex-start;
-    font-size: var(--text-size);
+  }
+
+  footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  footer ul li i {
+    color: var(--primary-color);
+    font-size: 0.625rem;
   }
 }
 
-@media only screen and (min-width: 744px) {
-  .wrapper {
-    max-width: 680px;
-  }
-
-  .main-header {
-    background-color: var(--text-color);
+@media only screen and (min-width: 768px) {
+  .index-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding);
+    background-color: var(--primary-color);
   }
 
-  .main-header .logo {
+  .index-header .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: var(--padding);
   }
 
-  .main-header .logo a {
-    font-size: var(--text-size);
+  .index-header .logo a {
     font-family: var(--text-font);
-    color: var(--bg-color);
-    font-weight: var(--bold);
-    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: var(--medium);
+    font-size: var(--paragraph-font-size);
   }
 
-  .main-header nav {
-    width: 420px;
+  .index-header nav {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .index-header nav input[type="checkbox"] {
+    display: none;
+  }
+
+  .index-header nav .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .index-header nav .burger .bar {
+    width: 100%;
+    background-color: var(--text-color);
+    border-radius: 50px;
+    height: 4px;
+  }
+
+  .index-header nav ul {
+    position: absolute;
+    top: 32px;
+    right: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    z-index: 1;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: all ease-in 0.3s;
+  }
+
+  .index-header nav ul li a {
+    padding: var(--padding);
+    color: var(--text-color);
+    font-weight: var(--medium);
+    font-size: var(--nav-link-font-size);
+    font-family: var(--text-font);
+    transition: all ease-in 0.3s;
+  }
+
+  .index-header nav #toggle:checked ~ ul {
+    opacity: 1;
+  }
+
+  main {
+    min-height: calc(100vh - 64px);
+  }
+
+  main #home {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  main #home figure {
+    width: 384px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main #home article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  main #home article h1 {
+    font-size: var(--h2-font-size);
+    color: var(--text-color);
+    font-family: var(--header-font);
+    padding: var(--padding);
+    font-weight: var(--extra-bold);
+  }
+
+  main #home article h1 span {
+    color: var(--secondary-color);
+  }
+
+  main #home article p {
+    color: var(--text-color);
+    font-family: var(--text-font);
+    font-size: var(--paragraph-font-size);
+    padding: var(--padding);
+  }
+
+  main #home article p span {
+    color: var(--secondary-color);
+  }
+
+  main #home article p span::before {
+    content: "Developer";
+    animation: typing 15s infinite;
+  }
+
+  @keyframes typing {
+    0% {
+      content: "Developer";
+    }
+
+    100% {
+      content: "Designer";
+    }
+  }
+
+  main #home article a,
+  main #contact div form button {
+    padding: var(--padding);
+    background-color: var(--accent-color);
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: var(--bold);
+    font-size: var(--paragraph-font-size);
+    font-family: var(--text-font);
+    align-self: flex-start;
+    transition: all ease-in 0.3s;
+  }
+
+  main #project,
+  main #about,
+  main #skill,
+  main #contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-section);
+  }
+
+  main #project .project-header,
+  main #about .about-header,
+  main #skill .skill-header,
+  main #contact .contact-header {
+    display: flex;
+    align-items: center;
+  }
+
+  main #project .project-header h2,
+  main #about .about-header h2,
+  main #skill .skill-header h2,
+  main #contact .contact-header h2 {
+    color: var(--secondary-color);
+    font-family: var(--header-font);
+    font-size: var(--h3-font-size);
+  }
+
+  main #project .project-ul,
+  main #skill .skill-ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: var(--gap-between-items);
+  }
+
+  main #project .project-ul li figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--text-color);
+    gap: 24px;
+  }
+
+  main #project .project-ul li figure figcaption,
+  main #skill .skill-ul li figure figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  main #project .project-ul li figure figcaption header,
+  main #skill .skill-ul li figure figcaption header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding);
+    gap: var(--padding);
+  }
+
+  main #project .project-ul li figure figcaption header h3,
+  main #skill .skill-ul li figure figcaption header h3 {
+    color: var(--primary-color);
+    font-family: var(--header-font);
+    font-size: var(--h4-font-size);
+    font-weight: var(--bold);
+    text-align: center;
+  }
+
+  main #project .project-ul li figure figcaption p,
+  main #skill .skill-ul li figure figcaption p {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    color: var(--primary-color);
+    padding: var(--padding);
+    line-height: 1.25rem;
+  }
+
+  main #project .project-ul li figure figcaption ul {
+    display: flex;
+    gap: 1.625rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  main #project .project-ul li figure figcaption ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--paragraph-font-size);
+    padding: var(--padding);
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: var(--bold);
+    font-family: var(--text-font);
+    color: var(--primary-color);
+    transition: all ease-in 0.3s;
+  }
+
+  main #project .project-ul li figure figcaption ul li a i {
+    font-size: var(--icons-font-size);
+    color: var(--accent-color);
+    transition: all ease-in 0.3s;
+  }
+
+  main #about figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2.25rem;
+    width: 100%;
+  }
+
+  main #about figure img {
+    border-radius: 50%;
+    width: 320px;
+  }
+
+  main #about figure figcaption,
+  main #skill .skill-ul li figure {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  main #about figure figcaption p {
+    font-size: var(--paragraph-font-size);
+    color: var(--text-color);
+    padding: var(--padding);
+    line-height: 1.75rem;
+  }
+
+  main #skill .skill-ul li figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-color);
+    gap: var(--paragraph-font-size);
+    width: 100%;
+  }
+
+  main #skill .skill-ul li figure i {
+    font-size: 3.75rem;
+    color: var(--accent-color);
+  }
+
+  main #contact div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--gap-between-items);
+  }
+
+  main #contact div article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--paragraph-font-size);
+    width: 368px;
+  }
+
+  main #contact div article p {
+    color: var(--text-color);
+    font-family: var(--text-font);
+    padding: var(--padding);
+    font-size: var(--paragraph-font-size);
+  }
+
+  main #contact div article ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  main #contact div article ul li a {
+    font-size: var(--icons-font-size);
+    color: var(--accent-color);
+  }
+
+  main #contact div form {
+    width: 368px;
+    background-color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--paragraph-font-size);
+  }
+
+  main #contact div form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--padding);
+  }
+
+  main #contact div form div label {
+    font-size: var(--paragraph-font-size);
+    font-weight: var(--medium);
+    color: var(--primary-color);
+    font-family: var(--text-font);
+  }
+
+  main #contact div form div input {
+    padding: 4px;
+    border-radius: 3px;
+    border: 1px solid var(--primary-color);
+  }
+
+  main #contact div form div textarea {
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid var(--primary-color);
+    resize: none;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--padding);
+    gap: var(--padding);
+    background-color: var(--accent-color);
+  }
+
+  footer nav {
+    width: 318;
+  }
+
+  footer nav ul {
+    width: 100%;
+    display: flex;
+    gap: var(--paragraph-font-size);
+  }
+
+  footer nav ul li a {
+    padding: var(--padding);
+    font-size: 0.625rem;
+    font-weight: var(--medium);
+    color: var(--primary-color);
+    font-family: var(--text-font);
+  }
+
+  footer ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 1.5rem;
+    width: 187px;
   }
 
-  .main-header nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-    position: relative;
-    right: 0px;
-    width: 100%px;
-    background-color: var(--text-color);
-    top: 0px;
-  }
-
-  .main-header nav ul li a {
-    padding: var(--padding);
-    color: var(--bg-color);
-    font-weight: var(--semibold);
-    font-size: var(--link-size);
-    text-decoration: none;
-    text-align: center;
-  }
-
-  #home {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #home figure {
-    background-image: url(../img/avatar.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 241px;
-    height: 241px;
-    border-radius: 50%;
-  }
-
-  #home article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--text-size);
-    width: 423px;
-  }
-
-  #home article h1 {
-    color: var(--text-color);
-    font-family: var(--header-font);
-    font-size: var(--h2-font-size);
-    padding: var(--padding);
-  }
-
-  #home article p,
-  #about figure figcaption p,
-  #contact .contact-wrapper article p {
-    font-size: var(--text-size);
-    font-family: var(--text-font);
-    line-height: 24px;
-    padding: var(--padding);
-  }
-
-  #home article a {
-    padding: var(--button-padding);
-    text-align: center;
-    font-size: var(--text-size);
-    color: var(--bg-color);
-    text-decoration: none;
-    font-weight: var(--bold);
-    background-color: var(--button-color);
-    align-self: flex-start;
-    width: 164px;
-  }
-
-  #project,
-  #about,
-  #skill,
-  #contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #project header,
-  #about header,
-  #skill header,
-  #contact header {
-    align-self: flex-start;
-    display: flex;
-    align-items: center;
-    padding: var(--padding);
-  }
-
-  #project header h2,
-  #about header h2,
-  #skill header h2,
-  #contact header h2 {
-    font-family: var(--header-font);
-    font-size: var(--h3-font-size);
-    color: var(--text-color);
-  }
-
-  #project .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    place-items: center;
-    gap: var(--text-size);
-    width: 100%;
-    list-style: none;
-  }
-
-  #project .project-gallery li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #project .project-gallery li figure,
-  #project .project-gallery li figure img {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #project .project-gallery li figure figcaption {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: var(--text-size);
-  }
-
-  #project .project-gallery li figure figcaption .project-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: var(--padding);
-  }
-
-  #project .project-gallery li figure figcaption .project-name h3 {
-    font-size: var(--h4-font-size);
-    color: var(--text-color);
-    font-family: var(--header-font);
-    text-align: center;
-  }
-
-  #project .project-gallery li figure figcaption .cta-project {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-  }
-
-  #project .project-gallery li figure figcaption .cta-project li a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--padding);
-    font-size: var(--link-size);
-    font-weight: var(--medium);
-    text-align: center;
-    padding: var(--padding);
-    text-decoration: none;
-    color: var(--text-color);
-  }
-
-  #project .project-gallery li figure figcaption .cta-project li a i {
-    font-size: 25px;
-    color: var(--button-color);
-  }
-
-  #about figure {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--text-size);
-    width: 100%;
-  }
-
-  #about figure img {
-    border-radius: 50%;
-    width: 241px;
-  }
-
-  #about figure figcaption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 439px;
-    gap: var(--text-size);
-  }
-
-  #skill .skill-collection {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: var(--text-size);
-    width: 100%;
-    list-style: none;
-    flex-wrap: wrap;
-  }
-
-  #skill .skill-collection li figure figcaption p {
-    padding: var(--padding);
-    text-align: center;
-    color: var(--text-color);
-    font-size: var(--text-size);
-    font-family: var(--text-font);
-    font-weight: var(--medium);
-  }
-
-  #skill .skill-collection li figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-    width: 100%;
-  }
-
-  #skill .skill-collection li figure figcaption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    gap: var(--text-size);
-  }
-
-  #skill .skill-collection li figure i {
-    font-size: 40px;
-    color: var(--button-color);
-  }
-
-  #contact .contact-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: var(--text-size);
-    width: 100%;
-  }
-
-  #contact .contact-wrapper article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--text-size);
-    width: 640px;
-  }
-
-  #contact .contact-wrapper article ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-  }
-
-  #contact .contact-wrapper article ul li a {
-    color: var(--button-color);
-    font-size: 25px;
-    text-decoration: none;
-  }
-
-  #contact .contact-wrapper form {
-    width: 100%;
-    background-color: inherit;
-    display: flex;
-    flex-direction: column;
-    gap: var(--text-size);
-    border: 1px solid var(--text-color);
-  }
-
-  #contact .contact-wrapper form div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--padding);
-    gap: var(--padding);
-  }
-
-  #contact .contact-wrapper form div label {
-    font-size: var(--link-size);
-    color: var(--text-color);
-    font-family: var(--text-font);
-    font-weight: var(--medium);
-  }
-
-  #contact .contact-wrapper form div input {
-    padding: var(--padding);
-    width: 100%;
-  }
-
-  #contact .contact-wrapper form div textarea {
-    padding: var(--padding);
-    width: 100%;
-    min-height: 125px;
-    resize: none;
-  }
-
-  #contact .contact-wrapper form button {
-    background-color: var(--button-color);
-    padding: var(--button-padding);
-    text-align: center;
-    color: var(--bg-color);
-    font-family: var(--text-font);
-    font-weight: var(--bold);
-    border: none;
-    appearance: none;
-    outline: none;
-    width: 138px;
-    align-self: flex-start;
-    font-size: var(--text-size);
+  footer ul li i {
+    color: var(--primary-color);
+    font-size: 0.625rem;
   }
 }
 
 @media only screen and (min-width: 1000px) {
-  .main-header nav ul li a {
-    transition: all ease-in 0.3s;
+  .index-header nav .burger {
+    display: none;
   }
 
-  .main-header nav ul li a:hover {
-    background-color: var(--bg-color);
-    color: var(--button-color);
+  .index-header nav {
+    width: 500px;
+  }
+
+  .index-header nav ul {
+    position: static;
+    top: 0px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    opacity: 1;
+  }
+
+  .index-header nav ul li a:hover {
+    color: var(--hover-color);
     font-weight: var(--bold);
   }
 
-  #home article {
-    width: 370px;
+  main #home figure {
+    width: 500px;
   }
 
-  #home article h1 {
+  main #home article h1 {
     font-size: var(--h1-font-size);
   }
 
-  #home article a {
-    transition: all ease-in 0.3s;
-  }
-
-  #home article a:hover {
+  main #home article a:hover,
+  main #contact div form button:hover {
     background-color: var(--hover-color);
   }
 
-  #project header h2,
-  #about header h2,
-  #skill header h2,
-  #contact header h2 {
+  main #project .project-header h2,
+  main #about .about-header h2,
+  main #skill .skill-header h2,
+  main #contact .contact-header h2 {
     font-size: var(--h2-font-size);
   }
 
-  #project .project-gallery li figure figcaption .project-name h3 {
+  main #project .project-ul,
+  main #skill .skill-ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  main #project .project-ul li figure figcaption header h3,
+  main #skill .skill-ul li figure figcaption header h3 {
     font-size: var(--h3-font-size);
   }
 
-  #project .project-gallery li figure figcaption .cta-project li a {
-    transition: all ease-in 0.3s;
-  }
-
-  #project .project-gallery li figure figcaption .cta-project li:hover a {
-    color: var(--button-color);
+  main #project .project-ul li figure figcaption ul li:hover a {
+    color: var(--hover-color);
     font-weight: var(--bold);
   }
 
-  #project .project-gallery li figure figcaption .cta-project li a i {
-    transition: all ease-in 0.3s;
-  }
-
-  #project .project-gallery li figure figcaption .cta-project li:hover a i {
-    color: var(--hover-color);
-  }
-
-  #skill .skill-collection li figure i {
-    font-size: 50px;
-  }
-
-  #contact .contact-wrapper article ul li a,
-  #contact .contact-wrapper form button {
-    transition: all ease-in 0.3s;
-  }
-
-  #contact .contact-wrapper article ul li a:hover {
-    color: var(--hover-color);
-  }
-
-  #contact .contact-wrapper form button:hover {
-    background-color: var(--hover-color);
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .wrapper {
-    max-width: 1120px;
-  }
-
-  #home figure {
-    width: 400px;
-    height: 400px;
-  }
-
-  #home article {
-    width: 532px;
-  }
-
-  #project .project-gallery {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  #about figure figcaption {
-    width: 669px;
-  }
-
-  #contact .contact-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--text-size);
-    width: 100%;
-  }
-
-  #contact .contact-wrapper article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--text-size);
-    width: 560px;
+  main #project .project-ul li figure figcaption ul li:hover a i {
+    color: var(--primary-color);
   }
 }

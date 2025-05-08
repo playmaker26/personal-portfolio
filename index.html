@@ -3,238 +3,312 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal portfolio</title>
+    <title>Jorge Artaza</title>
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="font-6/css/all.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="favicon/favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="font-6/css/all.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <header class="main-header">
-        <div class="logo">
-          <a href="index.html">Jorge Artaza</a>
-        </div>
+    <header class="index-header">
+      <div class="logo">
+        <a href="index.html">Jorge Artaza</a>
+      </div>
+      <nav>
+        <input type="checkbox" id="toggle" />
+        <label class="burger" for="toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <ul class="index-ul">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        <nav>
-          <ul class="main-ul">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skill">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+    <main>
+      <section id="home">
+        <figure>
+          <img
+            src="img/home.gif"
+            alt="programmer and designer working on a project"
+          />
+        </figure>
+        <article>
+          <h1>Hey I'm <span>Jorge</span></h1>
+          <p>I am a <span></span></p>
+          <a href="#project">Check out my Work</a>
+        </article>
+      </section>
+      <section id="project">
+        <header class="project-header">
+          <h2>View my recent work</h2>
+        </header>
+        <ul class="project-ul">
+          <li>
+            <figure>
+              <img src="project-images/project-1.png" alt="Quiz Game" />
+              <figcaption>
+                <header class="project-name">
+                  <h3>Quiz Game</h3>
+                </header>
+                <p>
+                  Developed a cinema quiz game with HTML, CSS, and JavaScript.
+                  How well do you know your stuff!
+                </p>
+                <ul class="cta-project">
+                  <li>
+                    <a href="#" title="Visit website"
+                      ><i class="fa-solid fa-globe"></i>View Demo</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" title="Visit the repo"
+                      ><i class="fa-brands fa-github"></i>View Code</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" title="View the design process"
+                      ><i class="fa-brands fa-figma"></i>View Design</a
+                    >
+                  </li>
+                </ul>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="project-images/project-2.png" alt="Weather App" />
+              <figcaption>
+                <header class="project-name">
+                  <h3>Weather App</h3>
+                </header>
+                <p>
+                  Developed a Weather App with HTML, CSS, and JavaScript. Go out
+                  knowing how the day is.
+                </p>
+                <ul class="cta-project">
+                  <li>
+                    <a href="#" title="Visit website"
+                      ><i class="fa-solid fa-globe"></i>View Demo</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" title="Visit the repo"
+                      ><i class="fa-brands fa-github"></i>View Code</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" title="View the design process"
+                      ><i class="fa-brands fa-figma"></i>View Design</a
+                    >
+                  </li>
+                </ul>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="project-images/project-3.png" alt="To-Do-List App" />
+              <figcaption>
+                <header class="project-name">
+                  <h3>To-Do-List App</h3>
+                </header>
+                <p>
+                  Developed a To-Do-List app with HTML, CSS, and JavaScript.
+                  Plan your day with ease.
+                </p>
+                <ul class="cta-project">
+                  <li>
+                    <a href="#" title="Visit website"
+                      ><i class="fa-solid fa-globe"></i>View Demo</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" title="Visit the repo"
+                      ><i class="fa-brands fa-github"></i>View Code</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" title="View the design process"
+                      ><i class="fa-brands fa-figma"></i>View Design</a
+                    >
+                  </li>
+                </ul>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
 
-      <main>
-        <section id="home">
-          <figure>
-            <!--Image will be added with CSS-->
-          </figure>
-
-          <article>
-            <h1>Hey! I’m Jorge</h1>
+      <section id="about">
+        <header class="about-header">
+          <h2>Who is this Person</h2>
+        </header>
+        <figure>
+          <img src="img/me.png" alt="representation of myself" />
+          <figcaption>
             <p>
-              I am a designer and developer. I design and program engaging
-              applications.
+              Thank you for scrolling this far. I am passionate designer and
+              developer. I specialize in the front to backend development with
+              an eye for detail. I also work on mobile development and game
+              development. I combine design and development to create an amazing
+              application. Whenever I am not designing or coding I am working
+              out, watching TV, or playing video games.
             </p>
-            <a href="#project">View My Projects</a>
+          </figcaption>
+        </figure>
+      </section>
+      <section id="skill">
+        <header class="skill-header">
+          <h2>What I know</h2>
+        </header>
+        <ul class="skill-ul">
+          <li>
+            <figure>
+              <i class="fa-solid fa-code"></i>
+              <figcaption>
+                <header class="skill-header">
+                  <h3>Frontend Development</h3>
+                </header>
+                <p>
+                  I am an expert in HTML, CSS, and JavaScript. I also am an
+                  expert in Bootstrap, sass, and jQuery.
+                </p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-solid fa-laptop-code"></i>
+              <figcaption>
+                <header class="skill-header">
+                  <h3>Backend Development</h3>
+                </header>
+                <p>
+                  I am an expert in PHP, Java, and Python. I also am an expert
+                  in Flask, Node.js with express.
+                </p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-solid fa-database"></i>
+              <figcaption>
+                <header class="skill-header">
+                  <h3>Databases Management</h3>
+                </header>
+                <p>I am an expert in doing MySQL, MongoDB, and NoSQL</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-solid fa-gamepad"></i>
+              <figcaption>
+                <header class="skill-header">
+                  <h3>Game Development</h3>
+                </header>
+                <p>
+                  I am an expert in C# and C++. I also am an expert in Unity
+                  Engine and Unreal Engine.
+                </p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <figcaption>
+                <header class="skill-header">
+                  <h3>Mobile Development</h3>
+                </header>
+                <p>I am an expert in React Native, Flutter, Kotlin, and PWA</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <i class="fa-solid fa-palette"></i>
+              <figcaption>
+                <header class="skill-header">
+                  <h3>UI/UX Design</h3>
+                </header>
+                <p>I am an expert in using GIMP, Inkscape, and Figma.</p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+      <section id="contact">
+        <header class="contact-header">
+          <h2>Let’s Connect</h2>
+        </header>
+        <div>
+          <article>
+            <p>
+              Have a project in mind contact me using the form or find me on
+              social media.
+            </p>
+            <ul class="sm-icon">
+              <li>
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+              </li>
+            </ul>
           </article>
-        </section>
-        <section id="project">
-          <header class="project-header">
-            <h2>My Projects</h2>
-          </header>
 
-          <ul class="project-gallery">
-            <li>
-              <figure>
-                <img src="project-images/skycast.svg" alt="skycast logo" />
-                <figcaption>
-                  <header class="project-name">
-                    <h3>SkyCast</h3>
-                  </header>
-                  <ul class="cta-project">
-                    <li>
-                      <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
-                    </li>
-                  </ul>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img
-                  src="project-images/blockbuster-brain.svg"
-                  alt="blockbuster brain logo"
-                />
-                <figcaption>
-                  <header class="project-name">
-                    <h3>BlockBuster Brain</h3>
-                  </header>
-                  <ul class="cta-project">
-                    <li>
-                      <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
-                    </li>
-                  </ul>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <img src="project-images/taskly.svg" alt="taskly logo" />
-                <figcaption>
-                  <header class="project-name">
-                    <h3>Taskly</h3>
-                  </header>
-                  <ul class="cta-project">
-                    <li>
-                      <a href="#"><i class="fa-solid fa-globe"></i>Live Demo</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa-brands fa-figma"></i>Figma</a>
-                    </li>
-                  </ul>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </section>
-        <section id="about">
-          <header>
-            <h2>About Me</h2>
-          </header>
+          <form action="#" id="form">
+            <div class="name">
+              <label for="name">Name</label>
+              <input type="text" id="name" />
+            </div>
+            <div class="email">
+              <label for="email">E-mail</label>
+              <input type="text" id="email" />
+            </div>
+            <div class="message">
+              <label for="message">Message</label>
+              <textarea name="msg" id="message"></textarea>
+            </div>
+            <button>Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <nav>
+        <ul class="footer-ul">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-          <figure>
-            <img
-              src="img/avatar.png"
-              alt="representation of designer and programmer"
-            />
-            <figcaption>
-              <p>
-                Hey again! Thanks for scrolling this far. I'm a passionate
-                designer and developer. When I'm not designing or coding, I’m
-                watching movies, anime, working out, or playing video games. If
-                you have any great recommendations or need a project completed,
-                feel free to reach out!
-              </p>
-            </figcaption>
-          </figure>
-        </section>
-        <section id="skill">
-          <header>
-            <h2>My Skills</h2>
-          </header>
-          <ul class="skill-collection">
-            <li>
-              <figure>
-                <i class="fa-brands fa-html5"></i>
-                <figcaption>
-                  <p>HTML</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <i class="fa-brands fa-css3-alt"></i>
-                <figcaption>
-                  <p>CSS</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <i class="fa-brands fa-js"></i>
-                <figcaption>
-                  <p>JavaScript</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <i class="fa-brands fa-github"></i>
-                <figcaption>
-                  <p>GitHub</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <i class="fa-brands fa-figma"></i>
-                <figcaption>
-                  <p>Figma</p>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
-        </section>
-        <section id="contact">
-          <header>
-            <h2>Contact Me</h2>
-          </header>
-          <div class="contact-wrapper">
-            <article>
-              <p>
-                Let's connect! Whether you have a project in mind, want to
-                collaborate, or just have a great movie or game recommendation,
-                feel free to reach out. I'm always open to new opportunities and
-                conversations!
-              </p>
-              <ul>
-                <li>
-                  <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa-brands fa-github"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                </li>
-              </ul>
-            </article>
-            <form action="#" class="form">
-              <div class="name">
-                <label for="input-name">Name</label>
-                <input type="text" id="input-name" />
-              </div>
-              <div class="email">
-                <label for="email-input">E-mail</label>
-                <input type="text" id="email-input" />
-              </div>
-              <div class="message">
-                <label for="message-area">Message</label>
-                <textarea name="message" id="message-area"></textarea>
-              </div>
-              <button>Send Message</button>
-            </form>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <p>Designed and developed by Jorge Artaza</p>
-      </footer>
-    </div>
+      <ul class="footer-sm">
+        <li><i class="fa-brands fa-github"></i></li>
+        <li><i class="fa-brands fa-square-facebook"></i></li>
+        <li><i class="fa-solid fa-envelope"></i></li>
+      </ul>
+    </footer>
   </body>
 </html>
