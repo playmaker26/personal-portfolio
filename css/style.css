@@ -1,27 +1,29 @@
 :root {
-  --primary-color: #003140;
-  --secondary-color: #ffff00;
-  --accent-color: #00bce8;
-  --hover-color: #40d9ff;
-  --text-color: #fff;
-  --header-font: "Playfair Display";
-  --text-font: Lato;
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --accent-color: #ec1c24;
+  --icon-hover: #02add5;
+  --text-hover: #76b672;
+  --body-font-family: "Source Sans 3";
+  --body-font-size: 1rem;
+  --header-font-family: Rubik;
   --padding: 0.5rem;
-  --h1-font-size: 3.8125rem;
-  --h2-font-size: 3rem;
-  --h3-font-size: 2.4375rem;
-  --h4-font-size: 1.9375rem;
-  --nav-link-font-size: 0.8125rem;
-  --paragraph-font-size: 1rem;
-  --icons-font-size: 1.5625rem;
-  --footer-font-size: 0.625rem;
-  --gap-section: 4.0625rem;
-  --gap-between-items: 2rem;
-  --extra-bold: 800;
-  --medium: 500;
-  --semi-bold: 600;
-  --regular: 400;
-  --bold: 700;
+  --tablet-padding: 0 1.5rem;
+  --desktop-padding: 0 2rem;
+  --h1-font-weight: 800;
+  --bold: bold;
+  --semibold: 600;
+  --h1-font-size: 3rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 2.0625;
+  --desktop-header-icon-size: 0.9375rem;
+  --mobile-header-icon-size: 1.375rem;
+  --side-padding: 0.5rem 0.75rem;
+  --side-gap: 0.625rem;
+  --nav-link-icon: 1.25rem;
+  --project-cta: 1.5625rem;
+  --header-icon-gap: 0.9375rem;
+  --line-height: 1.5rem;
 }
 
 * {
@@ -30,935 +32,703 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: var(--primary-color);
 }
 
-section {
-  min-height: 100vh;
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 53px auto;
 }
 
-a {
-  text-decoration: none;
+main section article nav ul li .active {
+  background-color: var(--icon-hover);
+  color: var(--primary-color);
 }
 
-ul {
+main section article nav ul li:has(a.active) {
+  border: none;
+}
+
+main section .skill-ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  margin: 1rem 0;
+  gap: 1rem;
   list-style: none;
-}
-
-img {
   width: 100%;
 }
 
-main {
-  margin: 65px 0;
+main section .skill-ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+main section .skill-ul li i {
+  font-size: 30px;
+}
+
+main section .skill-ul li span {
+  padding: var(--side-padding);
+  font-family: var(--body-font-family);
+  color: var(--secondary-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--semibold);
+}
+
+.html {
+  color: #f06529;
+}
+
+.css {
+  color: #264de4;
+}
+
+.js {
+  color: #f7df1e;
+}
+
+.node {
+  color: #3c873a;
+}
+
+.github {
+  color: #171515;
+}
+
+.figma {
+  color: #0acf83;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--side-padding);
+}
+
+footer p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: var(--bold);
+  color: var(--primary-color);
 }
 
 @media only screen and (max-width: 767px) {
-  .index-header {
+  .main-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    background-color: var(--primary-color);
   }
 
-  .index-header .logo {
+  .main-header nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .main-header nav ul {
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: var(--header-icon-gap);
+  }
+
+  .main-header nav ul li {
     padding: var(--padding);
   }
 
-  .index-header .logo a {
-    font-family: var(--text-font);
+  .main-header nav ul li a {
+    text-decoration: none;
+    padding: var(--padding);
+  }
+
+  .main-header nav ul li a i {
     color: var(--secondary-color);
-    font-weight: var(--medium);
-    font-size: var(--paragraph-font-size);
+    margin-right: var(--side-gap);
+    font-size: var(--mobile-header-icon-size);
   }
 
-  .index-header nav {
-    width: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .index-header nav input[type="checkbox"] {
+  .main-header nav ul li a span {
     display: none;
   }
 
-  .index-header nav .burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    width: 100%;
-  }
-
-  .index-header nav .burger .bar {
-    width: 100%;
-    background-color: var(--text-color);
-    border-radius: 50px;
-    height: 4px;
-  }
-
-  .index-header nav ul {
-    position: absolute;
-    top: 32px;
-    right: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 36px;
-    z-index: 1;
-    background-color: var(--primary-color);
-    opacity: 0;
-    transition: all ease-in 0.3s;
-  }
-
-  .index-header nav ul li a {
-    padding: var(--padding);
-    color: var(--text-color);
-    font-weight: var(--medium);
-    font-size: var(--nav-link-font-size);
-    font-family: var(--text-font);
-  }
-
-  .index-header nav #toggle:checked ~ ul {
-    opacity: 1;
-  }
-
   main {
-    min-height: calc(100vh - 88px);
+    min-height: calc(100vh - 70px);
   }
 
-  main #home {
+  main section {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--desktop-header-icon-size);
   }
 
-  main #home figure {
-    width: 100%;
+  main section article {
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-
-  main #home article {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
+    gap: var(--body-font-size);
   }
 
-  main #home article h1 {
+  main section article h1 {
     font-size: var(--h2-font-size);
-    color: var(--text-color);
-    font-family: var(--header-font);
-    padding: var(--padding);
-    font-weight: var(--extra-bold);
-  }
-
-  main #home article h1 span {
+    font-weight: var(--h1-font-weight);
     color: var(--secondary-color);
-  }
-
-  main #home article p {
-    color: var(--text-color);
-    font-family: var(--text-font);
-    font-size: var(--paragraph-font-size);
+    font-family: var(--header-font-family);
     padding: var(--padding);
   }
 
-  main #home article p span {
+  main section article p {
+    font-size: var(--body-font-size);
+    font-family: var(--body-font-family);
+    padding: var(--padding);
     color: var(--secondary-color);
+    line-height: var(--line-height);
   }
 
-  main #home article p span::before {
-    content: "Developer";
-    animation: typing 15s infinite;
-  }
-
-  @keyframes typing {
-    0% {
-      content: "Developer";
-    }
-
-    100% {
-      content: "Designer";
-    }
-  }
-
-  main #home article a,
-  main #contact div form button {
-    padding: var(--padding);
-    background-color: var(--accent-color);
-    text-align: center;
-    color: var(--primary-color);
+  main section article p span {
     font-weight: var(--bold);
-    font-size: var(--paragraph-font-size);
-    font-family: var(--text-font);
-    align-self: flex-start;
+    color: var(--accent-color);
   }
 
-  main #project,
-  main #about,
-  main #skill,
-  main #contact {
+  main section article nav ul {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-section);
+    justify-content: center;
+    gap: var(--desktop-header-icon-size);
   }
 
-  main #project .project-header,
-  main #about .about-header,
-  main #skill .skill-header,
-  main #contact .contact-header {
+  main section article nav ul li {
+    border: 1px solid var(--secondary-color);
+  }
+
+  main section article nav ul li a {
+    width: 100%;
     display: flex;
     align-items: center;
-  }
-
-  main #project .project-header h2,
-  main #about .about-header h2,
-  main #skill .skill-header h2,
-  main #contact .contact-header h2 {
+    gap: var(--side-gap);
+    padding: var(--side-padding);
+    font-family: var(--body-font-family);
+    font-weight: var(--semibold);
     color: var(--secondary-color);
-    font-family: var(--header-font);
-    font-size: var(--h3-font-size);
+    font-size: var(--body-font-size);
+    text-decoration: none;
   }
 
-  main #project .project-ul {
+  main section article nav ul li a i {
+    color: var(--accent-color);
+    font-size: var(--nav-link-icon);
+  }
+
+  main section figure,
+  main section figure img {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: var(--gap-between-items);
   }
 
-  main #project .project-ul li figure {
+  main section .project-ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: var(--body-font-size);
     width: 100%;
-    background-color: var(--text-color);
+  }
+
+  main section .project-ul li figure,
+  main section .project-ul li figure img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--body-font-size);
+  }
+
+  main section .project-ul li figure figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 24px;
   }
 
-  main #project .project-ul li figure figcaption,
-  main #skill .skill-ul li figure figcaption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-  }
-  main #project .project-ul li figure figcaption header,
-  main #skill .skill-ul li figure figcaption header {
+  main section .project-ul li figure figcaption .project-header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: var(--padding);
+  }
+
+  main section .project-ul li figure figcaption .project-header h2 {
+    font-size: var(--h2-font-size);
+    font-family: var(--header-font-family);
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: var(--bold);
+  }
+
+  main section .project-ul li figure figcaption p {
+    padding: var(--padding);
+    line-height: var(--line-height);
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    color: var(--secondary-color);
+  }
+
+  main section .project-ul li figure figcaption ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+  }
+
+  main section .project-ul li figure figcaption ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: var(--padding);
-  }
-
-  main #project .project-ul li figure figcaption header h3,
-  main #skill .skill-ul li figure figcaption header h3 {
-    color: var(--primary-color);
-    font-family: var(--header-font);
-    font-size: var(--h4-font-size);
-    font-weight: var(--bold);
-    text-align: center;
-  }
-
-  main #project .project-ul li figure figcaption p,
-  main #skill .skill-ul li figure figcaption p {
-    font-size: 0.875rem;
-    color: var(--primary-color);
-    color: var(--primary-color);
+    font-size: var(--body-font-size);
+    color: var(--secondary-color);
+    font-weight: var(--semibold);
     padding: var(--padding);
-    line-height: 1.25rem;
+    text-decoration: none;
   }
 
-  main #project .project-ul li figure figcaption ul {
-    display: flex;
-    gap: 1.625rem;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  main #project .project-ul li figure figcaption ul li a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--paragraph-font-size);
-    padding: var(--padding);
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: var(--bold);
-    font-family: var(--text-font);
-    color: var(--primary-color);
-  }
-
-  main #project .project-ul li figure figcaption ul li a i {
-    font-size: var(--icons-font-size);
+  main section .project-ul li figure figcaption ul li a i {
+    font-size: 25px;
     color: var(--accent-color);
   }
 
-  main #about figure {
+  main section form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 2.25rem;
+    background-color: transparent;
+    gap: var(--body-font-size);
     width: 100%;
   }
 
-  main #about figure img {
-    border-radius: 50%;
-    width: 300px;
-  }
-
-  main #about figure figcaption,
-  main #skill .skill-ul li figure {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  main #about figure figcaption p {
-    font-size: var(--paragraph-font-size);
-    color: var(--text-color);
-    padding: var(--padding);
-    line-height: 1.5rem;
-  }
-
-  main #skill .skill-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gap-between-items);
+  main section form div {
     width: 100%;
-  }
-
-  main #skill .skill-ul li figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--text-color);
-    gap: var(--paragraph-font-size);
-    width: 100%;
-  }
-
-  main #skill .skill-ul li figure i {
-    font-size: 3.75rem;
-    color: var(--accent-color);
-  }
-
-  main #contact div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--gap-between-items);
-  }
-
-  main #contact div article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--paragraph-font-size);
-  }
-
-  main #contact div article p {
-    color: var(--text-color);
-    font-family: var(--text-font);
-    padding: var(--padding);
-    font-size: var(--paragraph-font-size);
-  }
-
-  main #contact div article ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  main #contact div article ul li a {
-    font-size: var(--icons-font-size);
-    color: var(--accent-color);
-  }
-
-  main #contact div form {
-    width: 100%;
-    background-color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--paragraph-font-size);
-  }
-
-  main #contact div form div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: var(--padding);
   }
 
-  main #contact div form div label {
-    font-size: var(--paragraph-font-size);
-    font-weight: var(--medium);
-    color: var(--primary-color);
-    font-family: var(--text-font);
+  main section form div label {
+    font-size: var(--body-font-size);
+    font-weight: var(--semibold);
+    color: var(--secondary-color);
+    padding: var(--padding);
+    font-family: var(--body-font-family);
   }
 
-  main #contact div form div input {
-    padding: 4px;
-    border-radius: 3px;
-    border: 1px solid var(--primary-color);
-  }
-
-  main #contact div form div textarea {
-    padding: 20px;
-    border-radius: 3px;
-    border: 1px solid var(--primary-color);
+  main section form div input,
+  main section form div textarea {
+    padding: var(--padding);
     resize: none;
+    border: 1px solid var(--secondary-color);
   }
 
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  main section form div textarea {
+    min-height: 141px;
+  }
+
+  main section form button {
     padding: var(--padding);
-    gap: var(--padding);
+    width: 100%;
+    text-align: center;
     background-color: var(--accent-color);
-  }
-
-  footer nav {
-    width: 100%;
-  }
-
-  footer nav ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--paragraph-font-size);
-  }
-
-  footer nav ul li a {
-    padding: var(--padding);
-    font-size: 0.625rem;
-    font-weight: var(--medium);
+    font-size: var(--body-font-size);
+    font-weight: var(--bold);
     color: var(--primary-color);
-    font-family: var(--text-font);
-  }
-
-  footer ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
-  }
-
-  footer ul li i {
-    color: var(--primary-color);
-    font-size: 0.625rem;
+    outline: none;
+    border: none;
+    appearance: none;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .index-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-  }
-
-  .index-header .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--padding);
-  }
-
-  .index-header .logo a {
-    font-family: var(--text-font);
-    color: var(--secondary-color);
-    font-weight: var(--medium);
-    font-size: var(--paragraph-font-size);
-  }
-
-  .index-header nav {
-    width: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .index-header nav input[type="checkbox"] {
-    display: none;
-  }
-
-  .index-header nav .burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    width: 100%;
-  }
-
-  .index-header nav .burger .bar {
-    width: 100%;
-    background-color: var(--text-color);
-    border-radius: 50px;
-    height: 4px;
-  }
-
-  .index-header nav ul {
-    position: absolute;
-    top: 32px;
-    right: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 36px;
-    z-index: 1;
-    background-color: var(--primary-color);
-    opacity: 0;
-    transition: all ease-in 0.3s;
-  }
-
-  .index-header nav ul li a {
-    padding: var(--padding);
-    color: var(--text-color);
-    font-weight: var(--medium);
-    font-size: var(--nav-link-font-size);
-    font-family: var(--text-font);
-    transition: all ease-in 0.3s;
-  }
-
-  .index-header nav #toggle:checked ~ ul {
-    opacity: 1;
-  }
-
-  main {
-    min-height: calc(100vh - 64px);
-  }
-
-  main #home {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  main #home figure {
-    width: 384px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  main #home article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  main #home article h1 {
-    font-size: var(--h2-font-size);
-    color: var(--text-color);
-    font-family: var(--header-font);
-    padding: var(--padding);
-    font-weight: var(--extra-bold);
-  }
-
-  main #home article h1 span {
-    color: var(--secondary-color);
-  }
-
-  main #home article p {
-    color: var(--text-color);
-    font-family: var(--text-font);
-    font-size: var(--paragraph-font-size);
-    padding: var(--padding);
-  }
-
-  main #home article p span {
-    color: var(--secondary-color);
-  }
-
-  main #home article p span::before {
-    content: "Developer";
-    animation: typing 15s infinite;
-  }
-
-  @keyframes typing {
-    0% {
-      content: "Developer";
-    }
-
-    100% {
-      content: "Designer";
-    }
-  }
-
-  main #home article a,
-  main #contact div form button {
-    padding: var(--padding);
-    background-color: var(--accent-color);
-    text-align: center;
-    color: var(--primary-color);
-    font-weight: var(--bold);
-    font-size: var(--paragraph-font-size);
-    font-family: var(--text-font);
-    align-self: flex-start;
-    transition: all ease-in 0.3s;
-  }
-
-  main #project,
-  main #about,
-  main #skill,
-  main #contact {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-section);
-  }
-
-  main #project .project-header,
-  main #about .about-header,
-  main #skill .skill-header,
-  main #contact .contact-header {
-    display: flex;
-    align-items: center;
-  }
-
-  main #project .project-header h2,
-  main #about .about-header h2,
-  main #skill .skill-header h2,
-  main #contact .contact-header h2 {
-    color: var(--secondary-color);
-    font-family: var(--header-font);
-    font-size: var(--h3-font-size);
-  }
-
-  main #project .project-ul,
-  main #skill .skill-ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    gap: var(--gap-between-items);
-  }
-
-  main #project .project-ul li figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: var(--text-color);
-    gap: 24px;
-  }
-
-  main #project .project-ul li figure figcaption,
-  main #skill .skill-ul li figure figcaption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-  }
-  main #project .project-ul li figure figcaption header,
-  main #skill .skill-ul li figure figcaption header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--padding);
-    gap: var(--padding);
-  }
-
-  main #project .project-ul li figure figcaption header h3,
-  main #skill .skill-ul li figure figcaption header h3 {
-    color: var(--primary-color);
-    font-family: var(--header-font);
-    font-size: var(--h4-font-size);
-    font-weight: var(--bold);
-    text-align: center;
-  }
-
-  main #project .project-ul li figure figcaption p,
-  main #skill .skill-ul li figure figcaption p {
-    font-size: 0.875rem;
-    color: var(--primary-color);
-    color: var(--primary-color);
-    padding: var(--padding);
-    line-height: 1.25rem;
-  }
-
-  main #project .project-ul li figure figcaption ul {
-    display: flex;
-    gap: 1.625rem;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  main #project .project-ul li figure figcaption ul li a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--paragraph-font-size);
-    padding: var(--padding);
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: var(--bold);
-    font-family: var(--text-font);
-    color: var(--primary-color);
-    transition: all ease-in 0.3s;
-  }
-
-  main #project .project-ul li figure figcaption ul li a i {
-    font-size: var(--icons-font-size);
-    color: var(--accent-color);
-    transition: all ease-in 0.3s;
-  }
-
-  main #about figure {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2.25rem;
-    width: 100%;
-  }
-
-  main #about figure img {
-    border-radius: 50%;
-    width: 320px;
-  }
-
-  main #about figure figcaption,
-  main #skill .skill-ul li figure {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  main #about figure figcaption p {
-    font-size: var(--paragraph-font-size);
-    color: var(--text-color);
-    padding: var(--padding);
-    line-height: 1.75rem;
-  }
-
-  main #skill .skill-ul li figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--text-color);
-    gap: var(--paragraph-font-size);
-    width: 100%;
-  }
-
-  main #skill .skill-ul li figure i {
-    font-size: 3.75rem;
-    color: var(--accent-color);
-  }
-
-  main #contact div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--gap-between-items);
-  }
-
-  main #contact div article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--paragraph-font-size);
-    width: 368px;
-  }
-
-  main #contact div article p {
-    color: var(--text-color);
-    font-family: var(--text-font);
-    padding: var(--padding);
-    font-size: var(--paragraph-font-size);
-  }
-
-  main #contact div article ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  main #contact div article ul li a {
-    font-size: var(--icons-font-size);
-    color: var(--accent-color);
-  }
-
-  main #contact div form {
-    width: 368px;
-    background-color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--paragraph-font-size);
-  }
-
-  main #contact div form div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--padding);
-  }
-
-  main #contact div form div label {
-    font-size: var(--paragraph-font-size);
-    font-weight: var(--medium);
-    color: var(--primary-color);
-    font-family: var(--text-font);
-  }
-
-  main #contact div form div input {
-    padding: 4px;
-    border-radius: 3px;
-    border: 1px solid var(--primary-color);
-  }
-
-  main #contact div form div textarea {
-    padding: 20px;
-    border-radius: 3px;
-    border: 1px solid var(--primary-color);
-    resize: none;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--padding);
-    gap: var(--padding);
-    background-color: var(--accent-color);
-  }
-
-  footer nav {
-    width: 318;
-  }
-
-  footer nav ul {
-    width: 100%;
-    display: flex;
-    gap: var(--paragraph-font-size);
-  }
-
-  footer nav ul li a {
-    padding: var(--padding);
-    font-size: 0.625rem;
-    font-weight: var(--medium);
-    color: var(--primary-color);
-    font-family: var(--text-font);
-  }
-
-  footer ul {
+  .main-header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.5rem;
-    width: 187px;
+    padding: var(--tablet-padding);
   }
 
-  footer ul li i {
+  .main-header nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .main-header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--header-icon-gap);
+  }
+
+  .main-header nav ul li {
+    padding: var(--padding);
+  }
+
+  .main-header nav ul li a {
+    text-decoration: none;
+    padding: var(--padding);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--side-gap);
+    transition: all ease-in 0.3s;
+  }
+
+  .main-header nav ul li a i {
+    color: var(--secondary-color);
+    margin-right: var(--side-gap);
+    font-size: var(--desktop-header-icon-size);
+    transition: all ease-in 0.3s;
+  }
+
+  .main-header nav ul li a span {
+    display: block;
+    color: var(--secondary-color);
+    font-family: var(--body-font-family);
+    padding: var(--side-padding);
+  }
+
+  .main-header nav ul li .cta {
+    background-color: var(--accent-color);
+  }
+
+  .main-header nav ul li .cta i {
     color: var(--primary-color);
-    font-size: 0.625rem;
+  }
+
+  .main-header nav ul li .cta span {
+    color: var(--primary-color);
+    font-weight: var(--bold);
+  }
+
+  main {
+    min-height: calc(100vh - 96px);
+  }
+
+  main section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--desktop-header-icon-size);
+    padding: var(--tablet-padding);
+  }
+
+  main section article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--body-font-size);
+  }
+
+  main section article h1 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--h1-font-weight);
+    color: var(--secondary-color);
+    font-family: var(--header-font-family);
+    padding: var(--padding);
+  }
+
+  main section article p {
+    font-size: var(--body-font-size);
+    font-family: var(--body-font-family);
+    padding: var(--padding);
+    color: var(--secondary-color);
+    line-height: var(--line-height);
+  }
+
+  main section article p span {
+    font-weight: var(--bold);
+    color: var(--accent-color);
+  }
+
+  main section article nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--desktop-header-icon-size);
+  }
+
+  main section article nav ul li {
+    border: 1px solid var(--secondary-color);
+  }
+
+  main section article nav ul li a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--side-gap);
+    padding: var(--side-padding);
+    font-family: var(--body-font-family);
+    font-weight: var(--semibold);
+    color: var(--secondary-color);
+    font-size: var(--body-font-size);
+    text-decoration: none;
+    transition: all ease-in 0.3s;
+  }
+
+  main section article nav ul li a i {
+    color: var(--accent-color);
+    font-size: var(--nav-link-icon);
+  }
+
+  main section figure,
+  main section figure img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  main section .skill-ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 12rem auto;
+  }
+
+  main section .skill-ul li {
+    animation-name: appear;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+  main section .skill-ul .html-li {
+    animation-delay: 1s;
+    animation-duration: 0.5s;
+  }
+  main section .skill-ul .css-li {
+    animation-delay: 2s;
+    animation-duration: 0.6s;
+  }
+  main section .skill-ul .js-li {
+    animation-delay: 3s;
+    animation-duration: 0.7s;
+  }
+
+  main section .skill-ul .node-li {
+    animation-delay: 4s;
+    animation-duration: 0.8s;
+  }
+
+  main section .skill-ul .github-li {
+    animation-delay: 5s;
+    animation-duration: 0.9s;
+  }
+
+  main section .skill-ul .figma-li {
+    animation-delay: 6s;
+    animation-duration: 1s;
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  main section .project-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--body-font-size);
+    width: 100%;
+  }
+
+  main section .project-ul li figure,
+  main section .project-ul li figure img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--body-font-size);
+  }
+
+  main section .project-ul li figure figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  main section .project-ul li figure figcaption .project-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding);
+  }
+
+  main section .project-ul li figure figcaption .project-header h2 {
+    font-size: var(--h2-font-size);
+    font-family: var(--header-font-family);
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: var(--bold);
+  }
+
+  main section .project-ul li figure figcaption p {
+    padding: var(--padding);
+    line-height: var(--line-height);
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    color: var(--secondary-color);
+  }
+
+  main section .project-ul li figure figcaption ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+  }
+
+  main section .project-ul li figure figcaption ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--padding);
+    font-size: var(--body-font-size);
+    color: var(--secondary-color);
+    font-weight: var(--semibold);
+    padding: var(--padding);
+    text-decoration: none;
+    transition: all ease-in 0.3s;
+  }
+
+  main section .project-ul li figure figcaption ul li a i {
+    font-size: 25px;
+    color: var(--accent-color);
+    transition: all ease-in 0.3s;
+  }
+
+  main section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    gap: var(--body-font-size);
+    width: 100%;
+  }
+
+  main section form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--padding);
+  }
+
+  main section form div label {
+    font-size: var(--body-font-size);
+    font-weight: var(--semibold);
+    color: var(--secondary-color);
+    padding: var(--padding);
+    font-family: var(--body-font-family);
+  }
+
+  main section form div input,
+  main section form div textarea {
+    padding: var(--padding);
+    resize: none;
+    border: 1px solid var(--secondary-color);
+  }
+
+  main section form div textarea {
+    min-height: 141px;
+  }
+
+  main section form button {
+    padding: var(--padding);
+    width: 100%;
+    text-align: center;
+    background-color: var(--accent-color);
+    font-size: var(--body-font-size);
+    font-weight: var(--bold);
+    color: var(--primary-color);
+    outline: none;
+    border: none;
+    appearance: none;
+    transition: all ease-in 0.3s;
   }
 }
 
 @media only screen and (min-width: 1000px) {
-  .index-header nav .burger {
-    display: none;
+  .main-header {
+    padding: var(--desktop-padding);
   }
 
-  .index-header nav {
-    width: 500px;
-  }
-
-  .index-header nav ul {
-    position: static;
-    top: 0px;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-    opacity: 1;
-  }
-
-  .index-header nav ul li a:hover {
-    color: var(--hover-color);
+  .main-header nav ul li a:hover span {
+    color: var(--text-hover);
     font-weight: var(--bold);
   }
 
-  main #home figure {
-    width: 500px;
+  .main-header nav ul li a:hover i {
+    color: var(--icon-hover);
   }
 
-  main #home article h1 {
+  .main-header nav ul li:hover .cta {
+    background-color: transparent;
+  }
+
+  .main-header nav ul li .cta:hover i {
+    color: var(--icon-hover);
+  }
+
+  .main-header nav ul li .cta:hover span {
+    color: var(--text-hover);
+    font-weight: var(--bold);
+  }
+
+  main section {
+    padding: var(--desktop-padding);
+  }
+
+  main section article h1 {
     font-size: var(--h1-font-size);
   }
 
-  main #home article a:hover,
-  main #contact div form button:hover {
-    background-color: var(--hover-color);
-  }
-
-  main #project .project-header h2,
-  main #about .about-header h2,
-  main #skill .skill-header h2,
-  main #contact .contact-header h2 {
-    font-size: var(--h2-font-size);
-  }
-
-  main #project .project-ul,
-  main #skill .skill-ul {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  main #project .project-ul li figure figcaption header h3,
-  main #skill .skill-ul li figure figcaption header h3 {
-    font-size: var(--h3-font-size);
-  }
-
-  main #project .project-ul li figure figcaption ul li:hover a {
-    color: var(--hover-color);
+  main section article nav ul li:hover a {
+    color: var(--text-hover);
     font-weight: var(--bold);
   }
 
-  main #project .project-ul li figure figcaption ul li:hover a i {
-    color: var(--primary-color);
+  main section article nav ul li a:hover i {
+    color: var(--icon-hover);
+  }
+
+  main section article nav ul li:hover .active {
+    background-color: transparent;
+  }
+
+  main section .project-ul li figure figcaption ul li:hover a {
+    color: var(--text-hover);
+    font-weight: var(--bold);
+  }
+
+  main section .project-ul li figure figcaption ul li a:hover i {
+    color: var(--icon-hover);
+  }
+
+  main section form button:hover {
+    background-color: var(--icon-hover);
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: var(--bold);
   }
 }
