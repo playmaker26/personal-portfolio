@@ -85,6 +85,7 @@ p {
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-paragraph);
   padding: var(--padding);
+  color: var(--secondary-color);
 }
 
 a {
@@ -169,7 +170,7 @@ a {
     width: 100%;
     height: 0;
     opacity: 0;
-    z-index: 1;
+    z-index: 100;
     background-color: var(--dominant-color);
     display: flex;
     flex-direction: column;
@@ -241,7 +242,8 @@ a {
 
   #about,
   #project,
-  #skill {
+  #skill,
+  .skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -251,7 +253,8 @@ a {
 
   #about .about-header,
   #project .project-header,
-  #skill .skill-header {
+  #skill .skill-header,
+  .skills .heading-skills {
     width: 288px;
     display: flex;
     align-items: center;
@@ -340,6 +343,132 @@ a {
     color: var(--dominant-color);
     font-weight: var(--font-weight-bold);
     border-radius: 6px;
+  }
+
+  /*Skill styling pages*/
+
+  main .skills .heading-skills {
+    opacity: 0;
+    animation: skillAnimation 0.3s 0.8s ease-in forwards;
+  }
+
+  main .skills .skill-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    width: 288px;
+    align-self: flex-start;
+  }
+
+  main .skills .skill-ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main .skills .skill-ul li label {
+    font-size: var(--label);
+    line-height: var(--line-height-label);
+    color: var(--secondary-color);
+    font-family: var(--body-text);
+    font-weight: var(--font-weight-semi-bold);
+  }
+
+  main .skills .skill-ul li div {
+    width: 100%;
+    padding: var(--padding);
+    background-color: var(--accent-color);
+    text-align: center;
+  }
+
+  main .skills .skill-ul li div span {
+    color: var(--dominant-color);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--body-text);
+    font-size: 16px;
+  }
+
+  main .skills .skill-ul li #figma {
+    width: 75%;
+  }
+
+  main .skills .skill-ul li #html,
+  main .skills .skill-ul li #css,
+  main .skills .skill-ul li #php,
+  main .skills .skill-ul li #python {
+    width: 85%;
+  }
+
+  main .skills .skill-ul li #gimp {
+    width: 50%;
+  }
+
+  main .skills .skill-ul li #javascript,
+  main .skills .skill-ul li #sass,
+  main .skills .skill-ul li #jquery,
+  main .skills .skill-ul li #mysql,
+  main .skills .skill-ul li #ruby,
+  main .skills .skill-ul li #c-sharp,
+  main .skills .skill-ul li #ruby {
+    width: 75%;
+  }
+
+  main .skills .skill-ul li #canva {
+    width: 45%;
+  }
+
+  main .skills .skill-ul li #inkscape {
+    width: 65%;
+  }
+
+  main .skills .skill-ul li #blender {
+    width: 20%;
+  }
+
+  main .skills .skill-ul .figma-li,
+  main .skills .skill-ul .html-li,
+  main .skills .skill-ul .php-li {
+    opacity: 0;
+    animation: skillAnimation 0.4s 0.9s ease-in forwards;
+  }
+
+  main .skills .skill-ul .gimp-li,
+  main .skills .skill-ul .css-li,
+  main .skills .skill-ul .python-li {
+    opacity: 0;
+    animation: skillAnimation 0.5s 1s ease-in forwards;
+  }
+
+  main .skills .skill-ul .canva-li,
+  main .skills .javascript-li,
+  main .skills .skill-ul .mysql-li {
+    opacity: 0;
+    animation: skillAnimation 0.6s 2s ease-in forwards;
+  }
+
+  main .skills .skill-ul .inkscape-li,
+  main .skills .skill-ul .sass-li,
+  main .skills .skill-ul .ruby-li {
+    opacity: 0;
+    animation: skillAnimation 0.7s 3s ease-in forwards;
+  }
+
+  main .skills .skill-ul .blender-li,
+  main .skills .skill-ul .jquery-li,
+  main .skills .skill-ul .c-sharp-li {
+    opacity: 0;
+    animation: skillAnimation 0.8s 4s ease-in forwards;
+  }
+
+  @keyframes skillAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -493,7 +622,8 @@ a {
 
   #about,
   #project,
-  #skill {
+  #skill,
+  .skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -503,7 +633,8 @@ a {
 
   #about .about-header,
   #project .project-header,
-  #skill .skill-header {
+  #skill .skill-header,
+  .skills .heading-skills {
     width: 714px;
     display: flex;
     align-items: center;
@@ -603,80 +734,202 @@ a {
     border-radius: 6px;
     transition: all ease-in 0.3s;
   }
-}
 
-@media only screen and (min-width: 1000px) {
-  /*Header Styling*/
-  .main-header .main-nav {
-    position: relative;
-    width: 518px;
+  /*Skill styling pages*/
+  main .skills .heading-skills {
+    opacity: 0;
+    animation: skillAnimation 0.3s 0.8s ease-in forwards;
   }
 
-  .main-header .main-nav .hamburger-menu {
-    display: none;
+  main .skills .skill-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    width: 714px;
+    align-self: flex-start;
   }
 
-  .main-header .main-nav .main-nav-list {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    opacity: 1;
-    justify-content: flex-end;
-    flex-direction: row;
+  main .skills .skill-ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .main-header .main-nav .main-nav-list .main-nav-item a:hover {
-    color: var(--accent-color);
+  main .skills .skill-ul li label {
+    font-size: var(--label);
+    line-height: var(--line-height-label);
+    color: var(--secondary-color);
+    font-family: var(--body-text);
+    font-weight: var(--font-weight-semi-bold);
+  }
+
+  main .skills .skill-ul li div {
+    width: 100%;
+    padding: var(--padding);
+    background-color: var(--accent-color);
+    text-align: center;
+  }
+
+  main .skills .skill-ul li div span {
+    color: var(--dominant-color);
     font-weight: var(--font-weight-bold);
+    font-family: var(--body-text);
+    font-size: 16px;
   }
 
-  /*Home Styling*/
-
-  #home .background-image-container {
-    width: 488px;
+  main .skills .skill-ul li #figma {
+    width: 75%;
   }
 
-  #home .hero-section {
-    width: 500px;
+  main .skills .skill-ul li #html,
+  main .skills .skill-ul li #css {
+    width: 85%;
   }
 
-  #home .hero-section a:hover {
-    box-shadow: var(--hover-shadow);
-    color: var(--accent-color);
-    background-color: var(--dominant-color);
-    border: var(--border);
+  main .skills .skill-ul li #gimp {
+    width: 50%;
   }
 
-  /*About Styling*/
-  #about .about-header,
-  #skill .skill-header {
-    width: 951px;
+  main .skills .skill-ul li #javascript,
+  main .skills .skill-ul li #sass,
+  main .skills .skill-ul li #jquery {
+    width: 75%;
   }
 
-  #about .about-content {
-    width: 951px;
+  main .skills .skill-ul li #canva {
+    width: 45%;
   }
 
-  /*Project Styling*/
-  #project .project-gallery {
-    width: 951px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+  main .skills .skill-ul li #inkscape {
+    width: 65%;
   }
 
-  #project .project-gallery figure figcaption nav ul li a:hover {
-    box-shadow: var(--hover-shadow);
+  main .skills .skill-ul li #blender {
+    width: 20%;
   }
 
-  /*Skill Styling*/
-  #skill .skill-list {
-    width: 951px;
+  main .skills .skill-ul .figma-li,
+  main .skills .skill-ul .html-li {
+    opacity: 0;
+    animation: skillAnimation 0.4s 0.9s ease-in forwards;
   }
 
-  #skill .skill-list figure figcaption a:hover {
-    background-color: var(--dominant-color);
-    color: var(--accent-color);
-    border: var(--border);
-    box-shadow: var(--hover-shadow);
+  main .skills .skill-ul .gimp-li,
+  main .skills .skill-ul .css-li {
+    opacity: 0;
+    animation: skillAnimation 0.5s 1s ease-in forwards;
+  }
+
+  main .skills .skill-ul .canva-li,
+  main .skills .skill-ul .javascript-li {
+    opacity: 0;
+    animation: skillAnimation 0.6s 2s ease-in forwards;
+  }
+
+  main .skills .skill-ul .inkscape-li,
+  main .skills .skill-ul .sass-li {
+    opacity: 0;
+    animation: skillAnimation 0.7s 3s ease-in forwards;
+  }
+
+  main .skills .skill-ul .blender-li,
+  main .skills .skill-ul .jquery-li {
+    opacity: 0;
+    animation: skillAnimation 0.8s 4s ease-in forwards;
+  }
+
+  @keyframes skillAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    /*Header Styling*/
+    .main-header .main-nav {
+      position: relative;
+      width: 518px;
+    }
+
+    .main-header .main-nav .hamburger-menu {
+      display: none;
+    }
+
+    .main-header .main-nav .main-nav-list {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      opacity: 1;
+      justify-content: flex-end;
+      flex-direction: row;
+    }
+
+    .main-header .main-nav .main-nav-list .main-nav-item a:hover {
+      color: var(--accent-color);
+      font-weight: var(--font-weight-bold);
+    }
+
+    /*Home Styling*/
+
+    #home .background-image-container {
+      width: 488px;
+    }
+
+    #home .hero-section {
+      width: 500px;
+    }
+
+    #home .hero-section a:hover {
+      box-shadow: var(--hover-shadow);
+      color: var(--accent-color);
+      background-color: var(--dominant-color);
+      border: var(--border);
+    }
+
+    /*About Styling*/
+    #about .about-header,
+    #skill .skill-header .skills .heading-skills {
+      width: 951px;
+    }
+
+    #about .about-content {
+      width: 951px;
+    }
+
+    /*Project Styling*/
+    #project .project-gallery {
+      width: 951px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    #project .project-gallery figure figcaption nav ul li a:hover {
+      box-shadow: var(--hover-shadow);
+    }
+
+    /*Skill Styling*/
+    #skill .skill-list {
+      width: 951px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #skill .skill-list figure figcaption a:hover {
+      background-color: var(--dominant-color);
+      color: var(--accent-color);
+      border: var(--border);
+      box-shadow: var(--hover-shadow);
+    }
+
+    /*Skill styling pages*/
+    main .skills .skill-ul {
+      width: 951px;
+    }
   }
 }
