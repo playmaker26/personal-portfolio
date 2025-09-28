@@ -103,6 +103,7 @@ a {
     align-items: center;
     width: 100%;
     background-color: var(--dominant-color);
+    z-index: 9999;
   }
 
   .main-header .logo {
@@ -170,7 +171,7 @@ a {
     width: 100%;
     height: 0;
     opacity: 0;
-    z-index: 100;
+    z-index: 1000;
     background-color: var(--dominant-color);
     display: flex;
     flex-direction: column;
@@ -192,6 +193,10 @@ a {
   .main-header .main-nav .main-nav-list .main-nav-item a {
     font-size: var(--label);
     text-align: center;
+  }
+
+  main {
+    min-height: calc(100vh - 402px);
   }
 
   /*Home Styling*/
@@ -243,7 +248,8 @@ a {
   #about,
   #project,
   #skill,
-  .skills {
+  .skills,
+  #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -254,7 +260,8 @@ a {
   #about .about-header,
   #project .project-header,
   #skill .skill-header,
-  .skills .heading-skills {
+  .skills .heading-skills,
+  #contact .contact-header {
     width: 288px;
     display: flex;
     align-items: center;
@@ -470,6 +477,136 @@ a {
       opacity: 1;
     }
   }
+
+  /*Contact Styling*/
+  main #contact form {
+    width: 288px;
+    background-color: #fff;
+    border: #000000 1px solid;
+    padding: var(--padding);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  main #contact form fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+    gap: 16px;
+    width: 100%;
+  }
+
+  main #contact form fieldset legend {
+    padding: var(--padding);
+    text-align: center;
+    font-size: var(--heading-h3);
+    line-height: var(--line-height-h3);
+    color: var(--secondary-color);
+  }
+
+  main #contact form fieldset div {
+    width: 100%;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main #contact form fieldset div label {
+    font-size: var(--label);
+    font-family: var(--body-text);
+    color: var(--secondary-color);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--line-height-label);
+  }
+
+  main #contact form fieldset div input {
+    padding: var(--padding);
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  main #contact form fieldset div textarea {
+    width: 100%;
+    min-height: 104px;
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid #000;
+  }
+
+  main #contact form button {
+    align-self: flex-start;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: var(--dominant-color);
+    border-radius: 6px;
+    padding: var(--button-padding);
+    font-size: 16px;
+    appearance: none;
+    outline: none;
+    border: 1px solid #000;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-paragraph);
+    font-family: var(--body-text);
+  }
+
+  /*Footer Styling*/
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--secondary-color);
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  footer nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  footer nav ul li {
+    padding: var(--padding);
+  }
+
+  footer nav ul li a {
+    color: var(--dominant-color);
+    font-size: var(--footer);
+    text-align: center;
+  }
+
+  footer .ul-info {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  footer .ul-info li {
+    padding: var(--padding);
+    display: flex;
+    gap: 8px;
+  }
+
+  footer .ul-info li svg {
+    width: 13px;
+    fill: var(--accent-color);
+  }
+
+  footer .ul-info li span {
+    color: var(--dominant-color);
+    font-size: var(--footer);
+    font-family: var(--body-text);
+  }
+
+  footer .ul-info li a span {
+    text-decoration: underline;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -481,6 +618,7 @@ a {
     align-items: center;
     width: 100%;
     background-color: var(--dominant-color);
+    z-index: 9999;
   }
 
   .main-header .logo {
@@ -548,7 +686,7 @@ a {
     width: 100%;
     height: 0;
     opacity: 0;
-    z-index: 1;
+    z-index: 1000;
     background-color: var(--dominant-color);
     display: flex;
     flex-direction: column;
@@ -571,6 +709,10 @@ a {
     font-size: var(--label);
     text-align: center;
     transition: all ease-in 0.3s;
+  }
+
+  main {
+    min-height: calc(100vh - 162px);
   }
 
   /*Home Styling*/
@@ -623,7 +765,8 @@ a {
   #about,
   #project,
   #skill,
-  .skills {
+  .skills,
+  #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -634,7 +777,8 @@ a {
   #about .about-header,
   #project .project-header,
   #skill .skill-header,
-  .skills .heading-skills {
+  .skills .heading-skills,
+  #contact .contact-header {
     width: 714px;
     display: flex;
     align-items: center;
@@ -783,7 +927,9 @@ a {
   }
 
   main .skills .skill-ul li #html,
-  main .skills .skill-ul li #css {
+  main .skills .skill-ul li #css,
+  main .skills .skill-ul li #php,
+  main .skills .skill-ul li #python {
     width: 85%;
   }
 
@@ -793,7 +939,11 @@ a {
 
   main .skills .skill-ul li #javascript,
   main .skills .skill-ul li #sass,
-  main .skills .skill-ul li #jquery {
+  main .skills .skill-ul li #jquery,
+  main .skills .skill-ul li #mysql,
+  main .skills .skill-ul li #ruby,
+  main .skills .skill-ul li #c-sharp,
+  main .skills .skill-ul li #ruby {
     width: 75%;
   }
 
@@ -810,31 +960,36 @@ a {
   }
 
   main .skills .skill-ul .figma-li,
-  main .skills .skill-ul .html-li {
+  main .skills .skill-ul .html-li,
+  main .skills .skill-ul .php-li {
     opacity: 0;
     animation: skillAnimation 0.4s 0.9s ease-in forwards;
   }
 
   main .skills .skill-ul .gimp-li,
-  main .skills .skill-ul .css-li {
+  main .skills .skill-ul .css-li,
+  main .skills .skill-ul .python-li {
     opacity: 0;
     animation: skillAnimation 0.5s 1s ease-in forwards;
   }
 
   main .skills .skill-ul .canva-li,
-  main .skills .skill-ul .javascript-li {
+  main .skills .skill-ul .javascript-li,
+  main .skills .skill-ul .mysql-li {
     opacity: 0;
     animation: skillAnimation 0.6s 2s ease-in forwards;
   }
 
   main .skills .skill-ul .inkscape-li,
-  main .skills .skill-ul .sass-li {
+  main .skills .skill-ul .sass-li,
+  main .skills .skill-ul .ruby-li {
     opacity: 0;
     animation: skillAnimation 0.7s 3s ease-in forwards;
   }
 
   main .skills .skill-ul .blender-li,
-  main .skills .skill-ul .jquery-li {
+  main .skills .skill-ul .jquery-li,
+  main .skills .skill-ul .c-sharp-li {
     opacity: 0;
     animation: skillAnimation 0.8s 4s ease-in forwards;
   }
@@ -849,87 +1004,241 @@ a {
     }
   }
 
-  @media only screen and (min-width: 1000px) {
-    /*Header Styling*/
-    .main-header .main-nav {
-      position: relative;
-      width: 518px;
-    }
+  /*Contact Styling*/
+  main #contact form {
+    width: 714px;
+    background-color: #fff;
+    border: #000000 1px solid;
+    padding: var(--padding);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-    .main-header .main-nav .hamburger-menu {
-      display: none;
-    }
+  main #contact form fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+    gap: 16px;
+    width: 100%;
+  }
 
-    .main-header .main-nav .main-nav-list {
-      position: absolute;
-      top: 0px;
-      right: 0;
-      opacity: 1;
-      justify-content: flex-end;
-      flex-direction: row;
-    }
+  main #contact form fieldset legend {
+    padding: var(--padding);
+    text-align: center;
+    font-size: var(--heading-h3);
+    line-height: var(--line-height-h3);
+    color: var(--secondary-color);
+  }
 
-    .main-header .main-nav .main-nav-list .main-nav-item a:hover {
-      color: var(--accent-color);
-      font-weight: var(--font-weight-bold);
-    }
+  main #contact form fieldset div {
+    width: 100%;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 
-    /*Home Styling*/
+  main #contact form fieldset div label {
+    font-size: var(--label);
+    font-family: var(--body-text);
+    color: var(--secondary-color);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--line-height-label);
+  }
 
-    #home .background-image-container {
-      width: 488px;
-    }
+  main #contact form fieldset div input {
+    padding: var(--padding);
+    width: 100%;
+    border-radius: 6px;
+  }
 
-    #home .hero-section {
-      width: 500px;
-    }
+  main #contact form fieldset div textarea {
+    width: 100%;
+    min-height: 104px;
+    resize: none;
+    border-radius: 6px;
+    border: 1px solid #000;
+  }
 
-    #home .hero-section a:hover {
-      box-shadow: var(--hover-shadow);
-      color: var(--accent-color);
-      background-color: var(--dominant-color);
-      border: var(--border);
-    }
+  main #contact form button {
+    align-self: flex-start;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: var(--dominant-color);
+    border-radius: 6px;
+    padding: var(--button-padding);
+    font-size: 16px;
+    appearance: none;
+    outline: none;
+    border: 1px solid #000;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-paragraph);
+    font-family: var(--body-text);
+    transition: all ease-in 0.3s;
+  }
 
-    /*About Styling*/
-    #about .about-header,
-    #skill .skill-header .skills .heading-skills {
-      width: 951px;
-    }
+  /*Footer Styling*/
+  footer {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    background-color: var(--secondary-color);
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
 
-    #about .about-content {
-      width: 951px;
-    }
+  footer nav {
+    width: 522px;
+  }
 
-    /*Project Styling*/
-    #project .project-gallery {
-      width: 951px;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-    }
+  footer nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
 
-    #project .project-gallery figure figcaption nav ul li a:hover {
-      box-shadow: var(--hover-shadow);
-    }
+  footer nav ul li {
+    padding: var(--padding);
+  }
 
-    /*Skill Styling*/
-    #skill .skill-list {
-      width: 951px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  footer nav ul li a {
+    color: var(--dominant-color);
+    font-size: var(--footer);
+    text-align: center;
+    transition: all ease-in 0.3s;
+  }
 
-    #skill .skill-list figure figcaption a:hover {
-      background-color: var(--dominant-color);
-      color: var(--accent-color);
-      border: var(--border);
-      box-shadow: var(--hover-shadow);
-    }
+  footer .ul-info {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-    /*Skill styling pages*/
-    main .skills .skill-ul {
-      width: 951px;
-    }
+  footer .ul-info li {
+    padding: var(--padding);
+    display: flex;
+    gap: 8px;
+  }
+
+  footer .ul-info li svg {
+    width: 13px;
+    fill: var(--accent-color);
+  }
+
+  footer .ul-info li span {
+    color: var(--dominant-color);
+    font-size: var(--footer);
+    font-family: var(--body-text);
+  }
+
+  footer .ul-info li a span {
+    text-decoration: underline;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  /*Header Styling*/
+  .main-header .main-nav {
+    position: relative;
+    width: 518px;
+  }
+
+  .main-header .main-nav .hamburger-menu {
+    display: none;
+  }
+
+  .main-header .main-nav .main-nav-list {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    opacity: 1;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
+
+  .main-header .main-nav .main-nav-list .main-nav-item a:hover {
+    color: var(--accent-color);
+    font-weight: var(--font-weight-bold);
+  }
+
+  /*Home Styling*/
+
+  #home .background-image-container {
+    width: 488px;
+  }
+
+  #home .hero-section {
+    width: 500px;
+  }
+
+  #home .hero-section a:hover,
+  main #contact form button:hover {
+    box-shadow: var(--hover-shadow);
+    color: var(--accent-color);
+    background-color: var(--dominant-color);
+    border: var(--border);
+  }
+
+  /*About Styling*/
+  #about .about-header,
+  #skill .skill-header .skills .heading-skills {
+    width: 951px;
+  }
+
+  #about .about-content {
+    width: 951px;
+  }
+
+  /*Project Styling*/
+  #project .project-gallery {
+    width: 951px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  #project .project-gallery figure figcaption nav ul li a:hover {
+    box-shadow: var(--hover-shadow);
+  }
+
+  /*Skill Styling*/
+  #skill .skill-list {
+    width: 951px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #skill .skill-list figure figcaption a:hover {
+    background-color: var(--dominant-color);
+    color: var(--accent-color);
+    border: var(--border);
+    box-shadow: var(--hover-shadow);
+  }
+
+  /*Skill styling pages*/
+  main .skills .skill-ul {
+    width: 951px;
+  }
+
+  /*Contact Styling*/
+  main #contact form {
+    width: 951px;
+  }
+
+  /*Footer Styling*/
+  footer nav ul li a:hover {
+    font-weight: var(--font-weight-bold);
+  }
+
+  footer .ul-info li a span:hover {
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
   }
 }
