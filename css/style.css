@@ -266,6 +266,7 @@ a {
     display: flex;
     align-items: center;
     align-self: flex-start;
+    padding-top: 40px;
   }
 
   #about .about-content {
@@ -783,6 +784,7 @@ a {
     display: flex;
     align-items: center;
     align-self: flex-start;
+    padding-top: 40px;
   }
 
   #about .about-content {
